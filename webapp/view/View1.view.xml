@@ -1,0 +1,218 @@
+<mvc:View controllerName="CDCI1.controller.View1" height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.f" xmlns:t="sap.ui.table">
+	<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" toggleHeaderOnTitleClick="{/titleClickable}">
+		<!-- DynamicPage Title -->
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="TITULO: Aplicación - Área - Sociedad" class="letraGris"/>
+				</f:heading>
+				<f:actions>
+					<ToolbarSpacer/>
+					<ToggleButton pressed="{/headerExpanded}" text="{path:'/headerExpanded', formatter:'.formatToggleButtonText'}" type="Transparent"/>
+					<ToggleButton pressed="{/titleClickable}" text="Title Clickable" type="Transparent"/>
+					<layout:VerticalLayout>
+						<layout:HorizontalLayout>
+							<Text text="{i18n>usuario}:"/>
+							<Text text="Nombre/apellidos"/>
+						</layout:HorizontalLayout>
+						<layout:HorizontalLayout>
+							<Text text="{i18n>fecha}:"/>
+							<Text text="dd:mm:aa"/>
+							<Text text="{i18n>hora}:"/>
+							<Text text="hh:mm"/>
+						</layout:HorizontalLayout>
+					</layout:VerticalLayout>
+					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent"/>
+					<OverflowToolbarButton icon="sap-icon://edit" text="Edit" type="Transparent"/>
+					<OverflowToolbarButton icon="sap-icon://delete" text="Delete" type="Transparent"/>
+					<Button icon="sap-icon://post" text="Toggle Footer" type="Transparent" press="onToggleFooter"/>
+				</f:actions>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="true">
+				<f:content>
+					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						<layout:VerticalLayout>
+							<Label text="Nº Comité :" class="letraBlaca"/>
+							<MultiComboBox id="slName" width="150px" items="{vuelos>/FLISet}"
+							selectionFinish="handleSelectionFinish">
+								<core:ListItem text="{vuelos>Carrid}"/>
+							</MultiComboBox>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Fecha Comité:" class="letraBlaca"/>
+							<Select id="slName4" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Tipo de Expediente" class="letraBlaca"/>
+							<Select id="slName2" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Tipo de Procedimiento" class="letraBlaca"/>
+							<Select id="slName3" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+					</layout:Grid>
+					<!--2º linea-->
+					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						<layout:VerticalLayout>
+							<Label text="Tipo de Asignación" class="letraBlaca"/>
+							<Select id="slName5" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Naturaleza" class="letraBlaca"/>
+							<Select id="slName6" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Ámbito" class="letraBlaca"/>
+							<Select id="slName7" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Proyecto/Prop. Inversión" class="letraBlaca"/>
+							<Select id="slName8" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+					</layout:Grid>
+					<!--Fin 2º línea-->
+					<!--3º linea-->
+					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						<layout:VerticalLayout>
+							<Label text="Estado" class="letraBlaca"/>
+							<Select id="slName9" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Categoria" class="letraBlaca"/>
+							<Select id="slName10" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+					</layout:Grid>
+					<!--Fin 3º línea-->
+					<!--4º linea-->
+					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						<layout:VerticalLayout>
+							<Label text="Fecha Comité: Desde" class="letraBlaca"/>
+							<Select id="slName13" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Importe: Desde" class="letraBlaca"/>
+							<Select id="slName14" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Plazo de vigencia: Desde" class="letraBlaca"/>
+							<Select id="slName15" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+					</layout:Grid>
+					<!--Fin 4º línea-->
+					<!--5º linea-->
+					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						<layout:VerticalLayout>
+							<Label text="Hasta" class="letraBlaca"/>
+							<Select id="slName16" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Hasta" class="letraBlaca"/>
+							<Select id="slName17" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout>
+							<Label text="Hasta" class="letraBlaca"/>
+							<Select id="slName18" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
+								<core:Item key="{key}" text="{name}"/>
+							</Select>
+						</layout:VerticalLayout>
+					</layout:Grid>
+					<!--Fin 5º línea-->
+				</f:content>
+			</f:DynamicPageHeader>
+		</f:header>
+		<!-- DynamicPage Content -->
+		<f:content>
+			<t:Table rows="{vuelos>/FLIGHTSet}" id="Vuelos" selectionMode="None" visibleRowCount="250">
+				<t:columns>
+					<t:Column sorted="true">
+						<!--<t:multiLabels>-->
+						<!--<Label text="{i18n>listadenecesidades}"/>-->
+						<Label text="Carrid"/>
+						<!--</t:multiLabels>-->
+						<t:template>
+							<Text text="{vuelos>Carrid}"/>
+						</t:template>
+					</t:Column>
+					<t:Column sorted="true">
+						<t:multiLabels>
+							<!--<Label text="{i18n>listadenecesidades}"/>-->
+							<Label text="Connid"/>
+						</t:multiLabels>
+						<t:template>
+							<Text text="{vuelos>Connid}"/>
+						</t:template>
+					</t:Column>
+					<t:Column>
+						<t:multiLabels>
+							<Label text="{i18n>listadenecesidades}"/>
+							<Label text="Fldate"/>
+						</t:multiLabels>
+						<t:template>
+							<Text text="{vuelos>Fldate}"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+				<t:columns title="i18n>{acciones}">
+					<t:Column>
+						<t:multiLabels>
+							<Label text="{i18n>acciones}"/>
+							<Label text="{i18n>ver}"/>
+						</t:multiLabels>
+						<t:template>
+							<Button type="Default" icon="sap-icon://show" press="getSelectedColIndex" width="100%"></Button>
+						</t:template>
+					</t:Column>
+					<t:Column>
+						<t:multiLabels>
+							<Label text="{i18n>acciones}"/>
+							<Label text="{i18n>aprobado}"/>
+						</t:multiLabels>
+						<t:template>
+							<Button type="Accept" icon="sap-icon://thumb-up" press="getSelectedColIndex" width="100%"></Button>
+						</t:template>
+					</t:Column>
+					<t:Column>
+						<t:multiLabels>
+							<Label text="{i18n>acciones}"/>
+							<Label text="{i18n>rechazado}"/>
+						</t:multiLabels>
+						<t:template>
+							<core:Icon src="sap-icon://thumb-down" class="size2" color="red"/>
+						</t:template>
+					</t:Column>
+				</t:columns>
+			</t:Table>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>
