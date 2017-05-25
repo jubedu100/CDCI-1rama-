@@ -36,8 +36,7 @@
 					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
 						<layout:VerticalLayout>
 							<Label text="Nº Comité :" class="letraBlaca"/>
-							<MultiComboBox id="slName" width="150px" items="{vuelos>/FLISet}"
-							selectionFinish="handleSelectionFinish">
+							<MultiComboBox id="slName" width="150px" items="{vuelos>/FLISet}" selectionFinish="handleSelectionFinish">
 								<core:ListItem text="{vuelos>Carrid}"/>
 							</MultiComboBox>
 						</layout:VerticalLayout>
