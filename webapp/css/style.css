@@ -1,24 +1,18 @@
 /* Enter your custom styles here */
 /*estilos*/
 .letraBlaca{
-	color:green;	
+	color:red;	
 }
 .letraGris{
 	color:gray;
 	font-size:20px;
 }
 
-.orange1{
-	background-color:white;
-}
-
-.orange2{
-	background-color:white;
-}
-
 .orange{
-	background-color:#ffce3b;
+	background-color:white;
 }
+	
+
 
 .blue{
 	background-color:#4473c5;
