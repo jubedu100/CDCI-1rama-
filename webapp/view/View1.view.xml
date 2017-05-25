@@ -35,26 +35,26 @@
 				<f:content>
 					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
 						<layout:VerticalLayout>
-							<Label text="Nº Comité :" class="letraBlaca"/>
+							<Label text="{i18n>l1col1}" class="letraBlaca"/>
 							<MultiComboBox id="slName" width="150px" items="{vuelos>/FLISet}"
 							selectionFinish="handleSelectionFinish">
 								<core:ListItem text="{vuelos>Carrid}"/>
 							</MultiComboBox>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Fecha Comité:" class="letraBlaca"/>
+							<Label text="{i18n>l1col2}" class="letraBlaca"/>
 							<Select id="slName4" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Tipo de Expediente" class="letraBlaca"/>
+							<Label text="{i18n>l1col3}" class="letraBlaca"/>
 							<Select id="slName2" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Tipo de Procedimiento" class="letraBlaca"/>
+							<Label text="{i18n>l1col4}" class="letraBlaca"/>
 							<Select id="slName3" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
@@ -63,25 +63,25 @@
 					<!--2º linea-->
 					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
 						<layout:VerticalLayout>
-							<Label text="Tipo de Asignación" class="letraBlaca"/>
+							<Label text="{i18n>l2col1}" class="letraBlaca"/>
 							<Select id="slName5" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Naturaleza" class="letraBlaca"/>
+							<Label text="{i18n>l2col2}" class="letraBlaca"/>
 							<Select id="slName6" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Ámbito" class="letraBlaca"/>
+							<Label text="{i18n>l2col3}" class="letraBlaca"/>
 							<Select id="slName7" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Proyecto/Prop. Inversión" class="letraBlaca"/>
+							<Label text="{i18n>l2col4}" class="letraBlaca"/>
 							<Select id="slName8" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
@@ -91,13 +91,13 @@
 					<!--3º linea-->
 					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
 						<layout:VerticalLayout>
-							<Label text="Estado" class="letraBlaca"/>
+							<Label text="{i18n>l3col1}" class="letraBlaca"/>
 							<Select id="slName9" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Categoria" class="letraBlaca"/>
+							<Label text="{i18n>l3col2}" class="letraBlaca"/>
 							<Select id="slName10" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
@@ -107,19 +107,19 @@
 					<!--4º linea-->
 					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
 						<layout:VerticalLayout>
-							<Label text="Fecha Comité: Desde" class="letraBlaca"/>
+							<Label text="{i18n>l4col1} {i18n>l4col2}" class="letraBlaca"/>
 							<Select id="slName13" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Importe: Desde" class="letraBlaca"/>
+							<Label text="{i18n>l4col3} {i18n>l4col4}" class="letraBlaca"/>
 							<Select id="slName14" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Plazo de vigencia: Desde" class="letraBlaca"/>
+							<Label text="{i18n>l4col5} {i18n>l4col6}" class="letraBlaca"/>
 							<Select id="slName15" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
@@ -129,19 +129,19 @@
 					<!--5º linea-->
 					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
 						<layout:VerticalLayout>
-							<Label text="Hasta" class="letraBlaca"/>
+							<Label text="{i18n>l5col1}" class="letraBlaca"/>
 							<Select id="slName16" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Hasta" class="letraBlaca"/>
+							<Label text="{i18n>l5col2}" class="letraBlaca"/>
 							<Select id="slName17" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
-							<Label text="Hasta" class="letraBlaca"/>
+							<Label text="{i18n>l5col3}" class="letraBlaca"/>
 							<Select id="slName18" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
