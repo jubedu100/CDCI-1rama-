@@ -4,13 +4,14 @@
 	color:white;	
 }
 .letraGris{
-	color:gray;	
+	color:gray;
+	font-size:20px;
 }
 
 .orange{
-	background-color:#FACC2E;
+	background-color:#ffce3b;
 }
 
 .blue{
-	background-color:#8181F7;
+	background-color:#4473c5;
 }

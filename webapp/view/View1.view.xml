@@ -1,11 +1,12 @@
 <mvc:View controllerName="CDCI1.controller.View1" height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
 	xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.f" xmlns:t="sap.ui.table">
+
 	<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" toggleHeaderOnTitleClick="{/titleClickable}">
 		<!-- DynamicPage Title -->
 		<f:title>
 			<f:DynamicPageTitle>
 				<f:heading>
-					<Title text="TITULO: Aplicación - Área - Sociedad" class="letraGris"/>
+					<Text text="TITULO: {i18n>appTitle} - {i18n>area} - {i18n>sociedad}" class="letraGris"/>
 				</f:heading>
 				<f:actions>
 					<ToolbarSpacer/>
@@ -13,14 +14,14 @@
 					<ToggleButton pressed="{/titleClickable}" text="Title Clickable" type="Transparent"/>
 					<layout:VerticalLayout>
 						<layout:HorizontalLayout>
-							<Text text="{i18n>usuario}:"/>
-							<Text text="Nombre/apellidos"/>
+							<Text text="Usuario: " class="letraBlaca"/>
+							<Text text="{i18n>usuario}" />
 						</layout:HorizontalLayout>
 						<layout:HorizontalLayout>
-							<Text text="{i18n>fecha}:"/>
-							<Text text="dd:mm:aa"/>
-							<Text text="{i18n>hora}:"/>
-							<Text text="hh:mm"/>
+							<Text text="Fecha: " class="letraBlaca"/>
+							<Text text="{i18n>fecha}"/>
+							<Text text="Hora: " class="letraBlaca"/>
+							<Text text="{i18n>hora}"/>
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>
 					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent"/>
@@ -35,11 +36,12 @@
 				<f:content>
 					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
 						<layout:VerticalLayout>
-							<Label text="Nº Comité :" class="letraBlaca"/>
-							<MultiComboBox id="slName" width="150px" items="{vuelos>/FLISet}"
-							selectionFinish="handleSelectionFinish">
-								<core:ListItem text="{vuelos>Carrid}"/>
-							</MultiComboBox>
+
+							<Label text="Nº Comité  :" class="letraBlaca"/>
+							<MultiComboBox width="150px"
+						items="{ path: '{vuelos>/FLISet}' }">
+						<core:ListItem text="{vuelos>Carrid}"/>
+					</MultiComboBox>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
 							<Label text="Fecha Comité:" class="letraBlaca"/>
@@ -59,9 +61,11 @@
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
-					</layout:Grid>
-					<!--2º linea-->
-					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						</layout:Grid>
+						
+						<!--2º linea-->
+						<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						
 						<layout:VerticalLayout>
 							<Label text="Tipo de Asignación" class="letraBlaca"/>
 							<Select id="slName5" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
@@ -86,10 +90,12 @@
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
-					</layout:Grid>
-					<!--Fin 2º línea-->
-					<!--3º linea-->
-					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						</layout:Grid>
+						<!--Fin 2º línea-->
+						
+								<!--3º linea-->
+						<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						
 						<layout:VerticalLayout>
 							<Label text="Estado" class="letraBlaca"/>
 							<Select id="slName9" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
@@ -102,10 +108,13 @@
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
-					</layout:Grid>
-					<!--Fin 3º línea-->
-					<!--4º linea-->
-					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						
+						</layout:Grid>
+						<!--Fin 3º línea-->
+						
+							<!--4º linea-->
+						<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						
 						<layout:VerticalLayout>
 							<Label text="Fecha Comité: Desde" class="letraBlaca"/>
 							<Select id="slName13" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
@@ -124,10 +133,13 @@
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
-					</layout:Grid>
-					<!--Fin 4º línea-->
-					<!--5º linea-->
-					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						
+						</layout:Grid>
+						<!--Fin 4º línea-->
+						
+										<!--5º linea-->
+						<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+						
 						<layout:VerticalLayout>
 							<Label text="Hasta" class="letraBlaca"/>
 							<Select id="slName16" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
@@ -146,73 +158,65 @@
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
-					</layout:Grid>
-					<!--Fin 5º línea-->
-				</f:content>
+						
+						</layout:Grid>
+						<!--Fin 5º línea-->
+					
+					
+					</f:content>
 			</f:DynamicPageHeader>
 		</f:header>
 		<!-- DynamicPage Content -->
 		<f:content>
-			<t:Table rows="{vuelos>/FLIGHTSet}" id="Vuelos" selectionMode="None" visibleRowCount="250">
-				<t:columns>
-					<t:Column sorted="true">
-						<!--<t:multiLabels>-->
-						<!--<Label text="{i18n>listadenecesidades}"/>-->
-						<Label text="Carrid"/>
-						<!--</t:multiLabels>-->
-						<t:template>
-							<Text text="{vuelos>Carrid}"/>
-						</t:template>
-					</t:Column>
-					<t:Column sorted="true">
-						<t:multiLabels>
-							<!--<Label text="{i18n>listadenecesidades}"/>-->
-							<Label text="Connid"/>
-						</t:multiLabels>
-						<t:template>
-							<Text text="{vuelos>Connid}"/>
-						</t:template>
-					</t:Column>
-					<t:Column>
-						<t:multiLabels>
-							<Label text="{i18n>listadenecesidades}"/>
-							<Label text="Fldate"/>
-						</t:multiLabels>
-						<t:template>
-							<Text text="{vuelos>Fldate}"/>
-						</t:template>
-					</t:Column>
-				</t:columns>
-				<t:columns title="i18n>{acciones}">
-					<t:Column>
-						<t:multiLabels>
-							<Label text="{i18n>acciones}"/>
-							<Label text="{i18n>ver}"/>
-						</t:multiLabels>
-						<t:template>
-							<Button type="Default" icon="sap-icon://show" press="getSelectedColIndex" width="100%"></Button>
-						</t:template>
-					</t:Column>
-					<t:Column>
-						<t:multiLabels>
-							<Label text="{i18n>acciones}"/>
-							<Label text="{i18n>aprobado}"/>
-						</t:multiLabels>
-						<t:template>
-							<Button type="Accept" icon="sap-icon://thumb-up" press="getSelectedColIndex" width="100%"></Button>
-						</t:template>
-					</t:Column>
-					<t:Column>
-						<t:multiLabels>
-							<Label text="{i18n>acciones}"/>
-							<Label text="{i18n>rechazado}"/>
-						</t:multiLabels>
-						<t:template>
-							<core:Icon src="sap-icon://thumb-down" class="size2" color="red"/>
-						</t:template>
-					</t:Column>
-				</t:columns>
-			</t:Table>
+			<t:Table rows="{vuelos>/FLIGHTSet}" title="Vuelos" selectionMode="MultiToggle" visibleRowCount="356">
+						<t:columns>
+							<t:Column width="11rem">
+								<Label text="Carrid"/>
+								<t:template>
+									<Text text="{vuelos>Carrid}"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="11rem">
+								<Label text="Connid"/>
+								<t:template>
+									<Text text="{vuelos>Connid}"/>
+								</t:template>
+							</t:Column>
+							<t:Column width="11rem">
+								<Label text="Fldate"/>
+								<t:template>
+									<Text text="{vuelos>Fldate}"/>
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table>
 		</f:content>
 	</f:DynamicPage>
+	<!--	<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="false">
+		<headerTitle>
+			<ObjectPageHeader objectTitle="{i18n>title}">
+				<ObjectPageHeaderContent></ObjectPageHeaderContent>
+				<actions>
+					<layout:HorizontalLayout>
+						<m:Text text="{i18n>usuario}:"/>
+						<m:Text text="Nombre/apellidos"/>
+						<m:Text text="{i18n>hora}:"/>
+						<m:Text text="hh:mm"/>
+					</layout:HorizontalLayout>
+				</actions>
+			</ObjectPageHeader>
+		</headerTitle>
+		<headerContent>
+			<layout:VerticalLayout>
+				<layout:HorizontalLayout>
+					<m:Text id="area" text="{i18n>area}:"/>
+					<m:Text text="area"/>
+					<m:Text text="{i18n>sociedad}:"/>
+					<m:Text text="1000"/>
+				</layout:HorizontalLayout>
+			</layout:VerticalLayout>
+			<layout:VerticalLayout></layout:VerticalLayout>
+		</headerContent>
+
+	</ObjectPageLayout>-->
 </mvc:View>
