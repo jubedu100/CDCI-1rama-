@@ -1,7 +1,7 @@
 /* Enter your custom styles here */
 /*estilos*/
 .letraBlaca{
-	color:yellow;	
+	color:blue;	
 }
 .letraGris{
 	color:gray;
@@ -9,6 +9,10 @@
 }
 
 .orange{
+	background-color:white;
+}
+	
+.orange1{
 	background-color:#ffce3b;
 }
 
