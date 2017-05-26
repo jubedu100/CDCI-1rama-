@@ -9,8 +9,8 @@
 				</f:heading>
 				<f:actions>
 					<ToolbarSpacer/>
-					<ToggleButton pressed="{/headerExpanded}" text="{path:'/headerExpanded', formatter:'.formatToggleButtonText'}" type="Transparent"/>
-					<ToggleButton pressed="{/titleClickable}" text="Title Clickable" type="Transparent"/>
+					<!--<ToggleButton pressed="{/headerExpanded}" text="{path:'/headerExpanded', formatter:'.formatToggleButtonText'}" type="Transparent"/>-->
+					<!--<ToggleButton pressed="{/titleClickable}" text="Title Clickable" type="Transparent"/>-->
 					<layout:VerticalLayout>
 						<layout:HorizontalLayout>
 							<Text text="Usuario: " class="letraBlaca"/>
@@ -18,22 +18,22 @@
 						</layout:HorizontalLayout>
 						<layout:HorizontalLayout>
 							<Text text="Fecha: " class="letraBlaca"/>
-							<Text text="{i18n>fecha}"/>
+							<DatePicker change="SystemDate"/>
 							<Text text="Hora: " class="letraBlaca"/>
 							<Text text="{i18n>hora}"/>
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>
-					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent"/>
+<!--					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent"/>
 					<OverflowToolbarButton icon="sap-icon://edit" text="Edit" type="Transparent"/>
-					<OverflowToolbarButton icon="sap-icon://delete" text="Delete" type="Transparent"/>
-					<Button icon="sap-icon://post" text="Toggle Footer" type="Transparent" press="onToggleFooter"/>
+					<OverflowToolbarButton icon="sap-icon://delete" text="Delete" type="Transparent"/>-->
+					<!--<Button icon="sap-icon://post" text="Toggle Footer" type="Transparent" press="onToggleFooter"/>-->
 				</f:actions>
 			</f:DynamicPageTitle>
 		</f:title>
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
 				<f:content>
-					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+					<layout:Grid defaultSpan="XL3 L3 M3 S3" class="blue">
 						<layout:VerticalLayout>
 							<Label text="{i18n>l1col1}" class="letraBlaca"/>
 							<MultiComboBox id="slName" width="150px" items="{vuelos>/FLISet}"
@@ -61,7 +61,7 @@
 						</layout:VerticalLayout>
 					</layout:Grid>
 					<!--2º linea-->
-					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+					<layout:Grid defaultSpan="XL3 L3 M3 S3" class="blue">
 						<layout:VerticalLayout>
 							<Label text="{i18n>l2col1}" class="letraBlaca"/>
 							<Select id="slName5" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
@@ -89,7 +89,7 @@
 					</layout:Grid>
 					<!--Fin 2º línea-->
 					<!--3º linea-->
-					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+					<layout:Grid defaultSpan="XL3 L3 M3 S3" class="blue">
 						<layout:VerticalLayout>
 							<Label text="{i18n>l3col1}" class="letraBlaca"/>
 							<Select id="slName9" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
@@ -102,10 +102,10 @@
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
-					</layout:Grid>
+					<!--</layout:Grid>-->
 					<!--Fin 3º línea-->
 					<!--4º linea-->
-					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+					<!--<layout:Grid defaultSpan="XL3 L3 M3 S3" class="blue">-->
 						<layout:VerticalLayout>
 							<Label text="{i18n>l4col1} {i18n>l4col2}" class="letraBlaca"/>
 							<Select id="slName13" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
@@ -124,10 +124,10 @@
 								<core:Item key="{key}" text="{name}"/>
 							</Select>
 						</layout:VerticalLayout>
-					</layout:Grid>
+					<!--</layout:Grid>-->
 					<!--Fin 4º línea-->
 					<!--5º linea-->
-					<layout:Grid defaultSpan="XL3 L6 M6 S12" class="blue">
+				<!--	<layout:Grid defaultSpan="XL3 L3 M3 S3" class="blue">-->
 						<layout:VerticalLayout>
 							<Label text="{i18n>l5col1}" class="letraBlaca"/>
 							<Select id="slName16" width="150px" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
@@ -153,12 +153,13 @@
 		</f:header>
 		<!-- DynamicPage Content -->
 		<f:content>
-			<t:Table rows="{vuelos>/FLIGHTSet}" id="Vuelos" selectionMode="None" visibleRowCount="250">
+			<t:Table rows="{vuelos>/FLIGHTSet}" id="Vuelos" selectionMode="None" visibleRowCount="180" enableCellFilter="{ui>/cellFilterOn}"
+				filter="filterPrice">
 				<t:columns>
 					<t:Column sorted="true">
 						<!--<t:multiLabels>-->
 						<!--<Label text="{i18n>listadenecesidades}"/>-->
-						<Label text="Carrid"/>
+						<Label text="{i18n>carrid}"/>
 						<!--</t:multiLabels>-->
 						<t:template>
 							<Text text="{vuelos>Carrid}"/>
@@ -167,7 +168,7 @@
 					<t:Column sorted="true">
 						<t:multiLabels>
 							<!--<Label text="{i18n>listadenecesidades}"/>-->
-							<Label text="Connid"/>
+							<Label text="{i18n>connid}"/>
 						</t:multiLabels>
 						<t:template>
 							<Text text="{vuelos>Connid}"/>
@@ -176,7 +177,7 @@
 					<t:Column>
 						<t:multiLabels>
 							<Label text="{i18n>listadenecesidades}"/>
-							<Label text="Fldate"/>
+							<Label text="{i18n>fldate}"/>
 						</t:multiLabels>
 						<t:template>
 							<Text text="{vuelos>Fldate}"/>
