@@ -39,7 +39,7 @@
 							<Label text="{i18n>numComite}" class="letraBlaca"/>
 							<MultiComboBox id="slName" width="150px" items="{vuelos>/FLISet}"
 							selectionFinish="handleSelectionFinish">
-								<core:ListItem text="{vuelos>Carrid}"/>
+								<core:Item key="{vuelos>Carrid}" text="{vuelos>Carrid}"/>
 							</MultiComboBox>
 						</layout:VerticalLayout>
 						<layout:VerticalLayout>
@@ -151,8 +151,7 @@
 		</f:header>
 		<!-- DynamicPage Content -->
 		<f:content>
-			<t:Table rows="{vuelos>/FLIGHTSet}" id="Vuelos" selectionMode="None" visibleRowCount="180" enableCellFilter="{ui>/cellFilterOn}"
-				filter="filterPrice">
+			<t:Table rows="{path:'vuelos>/FLIGHTSet'}" id="Vuelos" selectionMode="None" visibleRowCount="200">
 				<t:columns>
 					<t:Column>
 						<Label text="{i18n>EMPRESA}"/>
