@@ -15,6 +15,7 @@
 			data-sap-ui-resourceroots='{"CDCI1": ""}'>
 		</script>
 
+
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<script>
@@ -27,9 +28,16 @@
 				}).placeAt("content");
 			});
 		</script>
+							<script>
+								$(document).ready(function () {
+								var f = new Date(); 
+								$('.fecha').html("julian");
+								});
+							</script>
 	</head>
 
 	<body class="sapUiBody" id="content">
 	</body>
+	
 
 </html>

@@ -19,7 +19,8 @@
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
-					"localUri": "localService/Z001_VUELOS_PRUEBA_SRV/metadata.xml"
+					"localUri": "localService/Z001_VUELOS_PRUEBA_SRV/metadata.xml",
+					"annotations": []
 				}
 			}
 		}
@@ -71,6 +72,10 @@
 				"settings": {
 					"bundleName": "CDCI1.i18n.i18n"
 				}
+			},
+			"@i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
 			}
 		},
 		"resources": {
@@ -80,5 +85,9 @@
 				}
 			]
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }

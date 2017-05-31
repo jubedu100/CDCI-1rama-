@@ -28,14 +28,19 @@ sap.ui.define([
 			// Create and set domain model to the component
 			var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, {
 				json: true,
-				user: "ZUNISYS01",
-				password: "ZUNISYS01",
+/*				user: "ZUNISYS01",
+				password: "ZUNISYS01",*/
 				loadMetadataAsync: true
 			});
 			oModel.attachMetadataFailed(function() {
 				this.getEventBus().publish("Component", "MetadataFailed");
 			}, this);
 			this.setModel(oModel, "vuelos");
+			
+			var oTable = sap.ui.getCore("Vuelos");
+			/*oTable.setVisibleRowCount(10);*/
+			
+			$("#fecha").html("hola");
 			
 		}
 	});

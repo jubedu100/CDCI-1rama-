@@ -1,17 +1,7 @@
-/* Enter your custom styles here */
-/*estilos*/
-.letraBlaca{
-	color:white;	
-}
-.letraGris{
-	color:gray;
-	font-size:20px;
+.imagen_tren {
+    background: url('images/trenes-tematicos-renfe-2016.jpg');
 }
 
-.orange{
-	background-color:#ffce3b;
-}
-
-.blue{
-	background-color:#4473c5;
+.oculto {
+    display: none;
 }

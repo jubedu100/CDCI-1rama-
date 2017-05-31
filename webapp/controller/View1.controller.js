@@ -32,6 +32,27 @@ sap.ui.define([
 			
 			//aplicamos el filtro
 			oBinding.filter(aFilter);
+			oTable.setVisibleRowCount(10);
+		/*	oBinding*/
+			
+			//********************importate!!!**************************
+			//Al aplicar el filtro, se realiza una nueva consulta al servicio oData, que tiene que estar implementado en el metodo 
+			//correspondiente para que devuelva los datos correctos
+		},
+		
+		busqueda_avanzada: function(oEvent){
+			if (oEvent.mParameters.pressed == true) {
+			$(".busqueda_avanzada").removeClass("oculto");
+			$(".button_search").text("ocultar busqueda avanzada");
+			}else{
+				$(".busqueda_avanzada").addClass("oculto");
+			}
+		},
+		ocultar_busqueda_avanzada: function(){
+			$(".busqueda_avanzada").addClass("oculto");
 		}
+			
+		
+		
 	});
 });

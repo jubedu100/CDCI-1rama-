@@ -6,7 +6,8 @@
   "build": {
     "targetFolder": "dist",
     "sourceFolder": "webapp",
-    "buildRequired": true
+    "buildRequired": true,
+    "lastBuildDateTime": "Wed, 31 May 2017 07:43:27 GMT"
   },
   "generation": [
     {
@@ -45,10 +46,15 @@
     "blockPushLevel": "Error"
   },
   "mockpreview": {
-    "mockUri": "/sflight/sap/opu/odata/sap/Z001_VUELOS_PRUEBA_SRV",
-    "metadataFilePath": "",
+    "mockUri": "/sflight/sap/opu/odata/sap/Z001_VUELOS_PRUEBA_SRV/",
+    "metadataFilePath": "localService/Z001_VUELOS_PRUEBA_SRV/metadata.xml",
     "loadJSONFiles": false,
     "loadCustomRequests": false,
     "mockRequestsFilePath": ""
+  },
+  "hcpdeploy": {
+    "account": "p1942403512trial",
+    "name": "cdci",
+    "lastVersionWeTriedToDeploy": "1.0.0"
   }
 }

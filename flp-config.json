@@ -1,0 +1,35 @@
+{
+    "application": {
+        "id": "",
+        "title": "CDCI1.CDCI",
+        "type": "SAP_UI5_Component",
+        "componentUrl": "/",
+        "appUrl": "#CDCI_julian-Display",
+        "navigationComponentName": "CDCI1",
+        "intentSemanticObject": "CDCI_julian",
+        "intentAction": "Display",
+        "html5ApplicationName": "cdci",
+        "HCPParentApplicationName": ""
+    },
+    "assignment": {
+        "groups": [
+            "3cc20f82-954b-4f69-acb4-631fccd2c199"
+        ],
+        "contentPackages": [
+            "2eb230c7-16a8-4461-bed4-06c23cd3be65"
+        ],
+        "categories": []
+    },
+    "tile": {
+        "type": "DynamicTile",
+        "title": "Title",
+        "subtitle": "Subtitle",
+        "searchKeywords": "Title,Subtitle",
+        "displayIconUrl": "sap-icon://approvals",
+        "displayInfoText": "",
+        "size": "1x1",
+        "serviceURL": "/sap/fiori/cdci/sflight/sap/opu/odata/sap/Z001_VUELOS_PRUEBA_SRV/FLIGHTSet/$count",
+        "refreshInterval": 10,
+        "displayNumberUnit": "FLIGHT"
+    }
+}
