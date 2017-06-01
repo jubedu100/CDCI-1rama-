@@ -1,7 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"CDCI1/model/models"
+	"CDCI1/model/models",
+/*	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"*/
 ], function(UIComponent, Device, models) {
 	"use strict";
 
@@ -24,6 +26,9 @@ sap.ui.define([
 			this.setModel(models.createDeviceModel(), "device");
 		/*	var mConfig = this.getMetadata().getConfig();*/
 			var sServiceUrl = this.getMetadata().getManifestEntry("sap.app").dataSources.Z001_VUELOS_PRUEBA_SRV.uri;
+			
+			
+
 
 			// Create and set domain model to the component
 			var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, {
@@ -35,12 +40,15 @@ sap.ui.define([
 			oModel.attachMetadataFailed(function() {
 				this.getEventBus().publish("Component", "MetadataFailed");
 			}, this);
+			
+
+			
 			this.setModel(oModel, "vuelos");
 			
-			var oTable = sap.ui.getCore("Vuelos");
+/*			var oTable = sap.ui.getCore("Vuelos");*/
 			/*oTable.setVisibleRowCount(10);*/
 			
-			$("#fecha").html("hola");
+		
 			
 		}
 	});

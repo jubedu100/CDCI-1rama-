@@ -1,12 +1,11 @@
 <mvc:View controllerName="CDCI1.controller.View1" height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
-	xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.f" xmlns:t="sap.ui.table" xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:layout="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.f" xmlns:t="sap.ui.table">
 	<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" toggleHeaderOnTitleClick="{/titleClickable}">
 		<!-- DynamicPage Title -->
 		<f:title>
 			<f:DynamicPageTitle>
 				<f:heading>
 					<Text text="TITULO: {i18n>appTitle} - {i18n>area} - {i18n>sociedad}" class="letraGris"/>
-					
 				</f:heading>
 				<f:actions>
 					<ToolbarSpacer/>
@@ -15,18 +14,17 @@
 					<layout:VerticalLayout>
 						<layout:HorizontalLayout>
 							<Text text="Usuario: " class="letraBlaca"/>
-							<Text text="{i18n>usuario}" />
+							<Text text="{i18n>usuario}"/>
 						</layout:HorizontalLayout>
 						<layout:HorizontalLayout>
 							<Text text="Fecha: " class="letraBlaca"/>
 							<Text class="fecha" text=""/>
-	
 							<!--</Text>-->
 							<Text text="Hora: " class="letraBlaca"/>
 							<Text text="{i18n>hora}"/>
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>
-<!--					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent"/>
+					<!--					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent"/>
 					<OverflowToolbarButton icon="sap-icon://edit" text="Edit" type="Transparent"/>
 					<OverflowToolbarButton icon="sap-icon://delete" text="Delete" type="Transparent"/>-->
 					<!--<Button icon="sap-icon://post" text="Toggle Footer" type="Transparent" press="onToggleFooter"/>-->
@@ -34,134 +32,142 @@
 			</f:DynamicPageTitle>
 		</f:title>
 		<f:header>
-			<f:DynamicPageHeader pinnable="true" >
-				<f:content  >
+			<f:DynamicPageHeader pinnable="true">
+				<f:content >
 					<!--Linea 1-->
-					<layout:VerticalLayout width="100%" class="imagen_tren" >
-				
-					<layout:Grid defaultSpan="XL3 L3 M3 S3"  >
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>numComite}" class="letraBlaca"/>
-							<MultiComboBox id="slName" width="{i18n>width_cajas}" items="{vuelos>/FLISet}"
-							selectionFinish="handleSelectionFinish">
-								<core:Item key="{vuelos>Carrid}" text="{vuelos>Carrid}"/>
-							</MultiComboBox>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>fechaComite}" class="letraBlaca"/>
-							<Select id="slName4" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>tipExp}" class="letraBlaca"/>
-							<Select id="slName2" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>tipProdec}" class="letraBlaca"/>
-							<Select id="slName3" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-					</layout:Grid>
-					<!--Fin linea 1-->
-					<!--2º linea-->
-					<layout:Grid defaultSpan="XL3 L3 M3 S3" class="oculto busqueda_avanzada">
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>tipAsig}" class="letraBlaca"/>
-							<Select id="slName5" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>naturaleza}" class="letraBlaca"/>
-							<Select id="slName6" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>ambito}" class="letraBlaca"/>
-							<Select id="slName7" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>proyect_inversion}" class="letraBlaca"/>
-							<Select id="slName8" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-					</layout:Grid>
-					<!--Fin 2º línea-->
-					<!--3º linea-->
-					<layout:Grid defaultSpan="XL3 L3 M3 S3" class="oculto busqueda_avanzada">
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>state}" class="letraBlaca"/>
-							<Select id="slName9" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>plazoVigencia} {i18n>desde}" class="letraBlaca"/>
-							<DatePicker id="slName10" width="{i18n>width_cajas}">
-								<!--<core:Item key="{key}" text="{name}"/>-->
-							</DatePicker>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>fechaComite} {i18n>desde}" class="letraBlaca"/>
-							<Select id="slName13" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>importe} {i18n>desde}" class="letraBlaca"/>
-							<Select id="slName14" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-						<!--Fin 3º línea-->
-						<!--4 linea-->
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>categoria}" class="letraBlaca"/>
-							<Select id="slName15" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-					<!--</layout:Grid>-->
-				<!--	<layout:Grid defaultSpan="XL3 L3 M3 S3" class="blue">-->
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>hasta}" class="letraBlaca"/>
-							<DatePicker width="{i18n>width_cajas}">
-								<!--<core:Item key="{key}" text="{name}"/>-->
-							</DatePicker>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>hasta}" class="letraBlaca"/>
-							<Select id="slName17" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-						<layout:VerticalLayout width="{i18n>width_layaut}">
-							<Label text="{i18n>hasta}" class="letraBlaca"/>
-							<Select id="slName18" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }" class="orange">
-								<core:Item key="{key}" text="{name}"/>
-							</Select>
-						</layout:VerticalLayout>
-					</layout:Grid>
+					<layout:VerticalLayout width="100%" class="imagen_tren">
+						<layout:Grid defaultSpan="XL3 L3 M3 S3">
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>numComite}" class="letraBlaca"/>
+								<MultiComboBox id="slName" width="{i18n>width_cajas}" items="{vuelos>/FLISet}" selectionFinish="handleSelectionFinish">
+									<core:Item key="{vuelos>Carrid}" text="{vuelos>Carrid}"/>
+								</MultiComboBox>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>fechaComite}" class="letraBlaca"/>
+								<DatePicker width="{i18n>width_cajas}" change="handfechacomite">
+									
+								</DatePicker>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>tipExp}" class="letraBlaca"/>
+								<Select id="slName2" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>tipProdec}" class="letraBlaca"/>
+								<Select id="slName3" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+						</layout:Grid>
+						<!--Fin linea 1-->
+						<!--2º linea-->
+						<layout:Grid defaultSpan="XL3 L3 M3 S3" class="oculto busqueda_avanzada">
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>tipAsig}" class="letraBlaca"/>
+								<Select id="slName5" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>naturaleza}" class="letraBlaca"/>
+								<Select id="slName6" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>ambito}" class="letraBlaca"/>
+								<Select id="slName7" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>proyect_inversion}" class="letraBlaca"/>
+								<Select id="slName8" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+						</layout:Grid>
+						<!--Fin 2º línea-->
+						<!--3º linea-->
+						<layout:Grid defaultSpan="XL3 L3 M3 S3" class="oculto busqueda_avanzada">
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>state}" class="letraBlaca"/>
+								<Select id="slName9" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>plazoVigencia} {i18n>desde}" class="letraBlaca"/>
+								<DatePicker id="slName10" width="{i18n>width_cajas}">
+									<!--<core:Item key="{key}" text="{name}"/>-->
+								</DatePicker>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>fechaComite} {i18n>desde}" class="letraBlaca"/>
+								<Select id="slName13" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>importe} {i18n>desde}" class="letraBlaca"/>
+								<Select id="slName14" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+							<!--Fin 3º línea-->
+							<!--4 linea-->
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>categoria}" class="letraBlaca"/>
+								<Select id="slName15" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+							<!--</layout:Grid>-->
+							<!--	<layout:Grid defaultSpan="XL3 L3 M3 S3" class="blue">-->
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>hasta}" class="letraBlaca"/>
+								<DatePicker width="{i18n>width_cajas}">
+									<!--<core:Item key="{key}" text="{name}"/>-->
+								</DatePicker>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>hasta}" class="letraBlaca"/>
+								<Select id="slName17" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+							<layout:VerticalLayout width="{i18n>width_layaut}">
+								<Label text="{i18n>hasta}" class="letraBlaca"/>
+								<Select id="slName18" width="{i18n>width_cajas}" forceSelection="true" change="onSelectChange" items="{ path: '/ProductNames' }"
+									class="orange">
+									<core:Item key="{key}" text="{name}"/>
+								</Select>
+							</layout:VerticalLayout>
+						</layout:Grid>
 					</layout:VerticalLayout>
 					<!--Fin 4º línea-->
 					<ToggleButton press="busqueda_avanzada" text="Busqueda avanzada" type="Transparent" pressed="ocultar_busqueda_avanzada"/>
 				</f:content>
 			</f:DynamicPageHeader>
 		</f:header>
-		
-			
-		
 		<!-- DynamicPage Content -->
 		<f:content>
-			<t:Table height="40%" rows="{path:'vuelos>/FLIGHTSet'}" id="Vuelos" selectionMode="None" visibleRowCount="200" firstVisibleRow="3">
+			<t:Table rows="{path:'vuelos>/FLIGHTSet' , filters: { path: 'Carrid', operator: 'EQ', value1: 'AA' } }" id="Vuelos" selectionMode="None"
+				visibleRowCount="10" firstVisibleRow="3">
 				<t:columns>
 					<t:Column>
 						<Label text="{i18n>EMPRESA}"/>
@@ -172,7 +178,7 @@
 					<t:Column>
 						<Label text="{i18n>numExpediente}"/>
 						<t:template>
-							<Text text="{vuelos>Connid}"/>
+							<Text text="{path:'vuelos>Connid'}"/>
 						</t:template>
 					</t:Column>
 					<t:Column>
@@ -221,7 +227,6 @@
 					<t:Column>
 						<Label text="{i18n>Estado}"/>
 						<t:template>
-							
 							<core:Icon src="sap-icon://sys-enter-2" class="size2" color="green"/>
 							<core:Icon src="sap-icon://sys-cancel" class="size2" color="red"/>
 							<core:Icon src="sap-icon://sys-help" class="size2" color="blue"/>
@@ -257,12 +262,4 @@
 			</t:Table>
 		</f:content>
 	</f:DynamicPage>
-	
-	<html:script>
-								$(document).ready(function () {
-								var f = new Date(); 
-								$('#__text7').text(f);
-								});
-							</html:script>
-
 </mvc:View>
