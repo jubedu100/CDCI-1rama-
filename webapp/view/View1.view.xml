@@ -5,7 +5,7 @@
 		<f:title>
 			<f:DynamicPageTitle>
 				<f:heading>
-					<Text text="TITULO: {i18n>appTitle} - {i18n>area} - {i18n>sociedad}" class="letraGris"/>
+					<Text text="TITULO: {i18n>appTitle} - {i18n>area} - {i18n>sociedad}" class="GrisGrand"/>
 				</f:heading>
 				<f:actions>
 					<ToolbarSpacer/>
@@ -13,14 +13,14 @@
 					<!--<ToggleButton pressed="{/titleClickable}" text="Title Clickable" type="Transparent"/>-->
 					<layout:VerticalLayout>
 						<layout:HorizontalLayout>
-							<Text text="Usuario: " class="letraBlaca"/>
+							<Text text="Usuario: "/>
 							<Text text="{i18n>usuario}"/>
 						</layout:HorizontalLayout>
 						<layout:HorizontalLayout>
-							<Text text="Fecha: " class="letraBlaca"/>
+							<Text text="Fecha: "/>
 							<Text class="fecha" text=""/>
 							<!--</Text>-->
-							<Text text="Hora: " class="letraBlaca"/>
+							<Text text="Hora: "/>
 							<Text text="{i18n>hora}"/>
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>

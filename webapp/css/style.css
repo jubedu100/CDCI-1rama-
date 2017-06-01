@@ -5,3 +5,16 @@
 .oculto {
     display: none;
 }
+.GrisGrand{
+	color:gray;
+	font-size:20px;
+	font-weight: bold;
+}
+.letraBlaca{
+	color:white;
+	font-weight: bold;
+}
+
+#__header0-pinBtn {
+	display:none;
+}
