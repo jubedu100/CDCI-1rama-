@@ -45,9 +45,9 @@
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="{i18n>width_layaut}">
 								<Label text="{i18n>fechaComite}" class="letraBlaca"/>
-								<DatePicker width="{i18n>width_cajas}" change="handfechacomite">
+								<DateRangeSelection width="{i18n>width_cajas}" change="handfechacomite">
 									
-								</DatePicker>
+								</DateRangeSelection>
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="{i18n>width_layaut}">
 								<Label text="{i18n>tipExp}" class="letraBlaca"/>

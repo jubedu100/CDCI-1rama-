@@ -72,20 +72,26 @@ sap.ui.define([
 
 			//recuperamos los Items seleccionados
 			/*var sQuery = oEvent.mParameters.value;*/
-			var oSource = oEvent.getSource();
-			var sQuery = oSource.getDateValue();
+			
+			//************recuperar valor para Datepicker****************
+/*			var oSource = oEvent.getSource();
+			var sQuery = oSource.getDateValue();*/
+			
+			//************recuperar valor para DateRangeSelection****************
+			var sQueryFrom = oEvent.mParameters.from;
+			var sQueryTo = oEvent.mParameters.to;
 
 
 
-			function sumarDias(fecha, dias) {
+/*			function sumarDias(fecha, dias) {
 				fecha.setDate(fecha.getDate() + dias);
 				return fecha;
-			}
+			}*/
 
 			//definimos la variable donde se va a guardar el text o key del Item seleccionado
 
-			var d = sQuery;
-			var incremental = sumarDias(d, 1);
+/*			var d = sQuery;
+			var incremental = sumarDias(d, 1);*/
 
 			
 			//recuperamos los datos de la tabla
@@ -112,7 +118,7 @@ sap.ui.define([
 			}
 
 			//cargamos el filtro con los parámetros a filtrar
-			aFilter.push(new Filter("Fldate", FilterOperator.EQ, sQuery, incremental));
+			aFilter.push(new Filter("Fldate", FilterOperator.BT, sQueryFrom, sQueryTo));
 
 
 			//aplicamos el filtro
