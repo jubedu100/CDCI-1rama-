@@ -12,16 +12,15 @@
 					<!--<ToggleButton pressed="{/headerExpanded}" text="{path:'/headerExpanded', formatter:'.formatToggleButtonText'}" type="Transparent"/>-->
 					<!--<ToggleButton pressed="{/titleClickable}" text="Title Clickable" type="Transparent"/>-->
 					<layout:VerticalLayout>
-						<layout:HorizontalLayout>
-							<Text text="Usuario: "/>
+						<layout:HorizontalLayout class="alingDerech">
+							<Text text="Usuario: " class="negrita"/>
 							<Text text="{i18n>usuario}"/>
 						</layout:HorizontalLayout>
-						<layout:HorizontalLayout>
-							<Text text="Fecha: "/>
-							<Text class="fecha" text=""/>
-							<!--</Text>-->
-							<Text text="Hora: "/>
-							<Text text="{i18n>hora}"/>
+						<layout:HorizontalLayout class="alingDerech">
+							<Text text="Fecha: " class="negrita"/>
+							<Text id="fecha"/>
+							<Text text="Hora: " class="negrita"/>
+							<Text id="hora"/>
 						</layout:HorizontalLayout>
 					</layout:VerticalLayout>
 					<!--					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent"/>
@@ -45,9 +44,9 @@
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="{i18n>width_layaut}">
 								<Label text="{i18n>fechaComite}" class="letraBlaca"/>
-								<DateRangeSelection width="{i18n>width_cajas}" change="handfechacomite">
+								<DatePicker width="{i18n>width_cajas}" change="handfechacomite">
 									
-								</DateRangeSelection>
+								</DatePicker>
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="{i18n>width_layaut}">
 								<Label text="{i18n>tipExp}" class="letraBlaca"/>
@@ -160,7 +159,10 @@
 						</layout:Grid>
 					</layout:VerticalLayout>
 					<!--Fin 4º línea-->
-					<ToggleButton press="busqueda_avanzada" text="Busqueda avanzada" type="Transparent" pressed="ocultar_busqueda_avanzada"/>
+					<ToggleButton id="btn1" press="busqueda_avanzada" type="Transparent" pressed="ocultar_busqueda_avanzada" text="Búsqueda avanzada"/>
+					<ToggleButton text="Actualizar" class="btn"/>
+					<ToggleButton text="Aplicar" class="btn"/>
+					<ToggleButton text="Crear" class="btn"/>
 				</f:content>
 			</f:DynamicPageHeader>
 		</f:header>
@@ -184,7 +186,7 @@
 					<t:Column>
 						<Label text="{i18n>numOrden}"/>
 						<t:template>
-							<!--							<Text text="{vuelos>Fldate}" type='sap.ui.model.type.DateTime' formatOptions="{ pattern='yyyyMMdd HHmmss' }"/>-->
+							<!--<Text text="{vuelos>Fldate}" type='sap.ui.model.type.DateTime' formatOptions="{ pattern='yyyyMMdd HHmmss' }"/>-->
 							<Text text="{ path: 'vuelos>Fldate', type: 'sap.ui.model.type.DateTime', formatOptions: { style: 'short' } }"/>
 						</t:template>
 					</t:Column>
@@ -194,7 +196,7 @@
 							<Text text="{vuelos>Connid}"/>
 						</t:template>
 					</t:Column>
-					<t:Column width="250px">
+					<t:Column id="colDescripcion" width="100px"> <!--cambiar a porcentaje o algo-->
 						<Label text="{i18n>descripción}"/>
 						<t:template>
 							<Text text="{vuelos>Connid}"/>

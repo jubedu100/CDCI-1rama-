@@ -6,6 +6,48 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("CDCI1.controller.View1", {
+		
+		onAfterRendering  : function() {
+			
+			var that = this;//Para que la fecha y la hora se actualice continuamoente
+			
+			//Fecha actual
+			
+			var dFecha = new Date();
+			
+			var y = dFecha.getFullYear();
+			var m = "0" + (dFecha.getMonth() + 1);
+				if(m > 9){
+					m =  dFecha.getMonth();
+					}
+			var d = "0" + dFecha.getDate();
+				if(d > 9){
+					d =  dFecha.getDate();
+					}
+			this.getView().byId("fecha").setText(d + "/" + m + "/" + y);
+			
+			//Hora actual
+				 
+			var hh = "0" + dFecha.getHours();
+				if(hh > 9){
+					hh =  dFecha.getHours();
+					}
+			var MM = "0" + dFecha.getMinutes();
+				if(MM > 9){
+					MM =  dFecha.getMinutes();
+				}
+			var ss =  "0" + dFecha.getSeconds();
+				if(ss > 9){
+					ss =  dFecha.getSeconds();
+				}
+	
+			this.getView().byId("hora").setText(hh + ":" + MM + ":" + ss);
+			
+			setInterval( function() { that.onAfterRendering(); }, 500 );    
+			
+		},
+		
+	
 		handleSelectionFinish: function(oEvent) {
 
 			//implementacion del filtro
@@ -26,9 +68,9 @@ sap.ui.define([
 			//definimos el array dónde se van a definir los parámetros del filtro
 			var aFilter = [];
 			
-			//cargamos el filtro con los elementos del filtro que ya están aplicados
-			//y eliminamos los elementos pertenecientes al filtro a aplicar
-			//para mantener el resto de filtros activos
+			/*cargamos el filtro con los elementos del filtro que ya están aplicados
+			y eliminamos los elementos pertenecientes al filtro a aplicar
+			para mantener el resto de filtros activos*/
 
 			for (i = 0; i < oBinding.aFilters.length; i++) {
 				aFilter[i] = oBinding.aFilters[i];
@@ -60,11 +102,22 @@ sap.ui.define([
 		},
 
 		busqueda_avanzada: function(oEvent) {
-			if (oEvent.mParameters.pressed == true) {
+			if (oEvent.mParameters.pressed == true ) {
 				$(".busqueda_avanzada").removeClass("oculto");
-				$(".button_search").text("ocultar busqueda avanzada");
+				 this.getView().byId("btn1").setText("Ocultar búsqueda avanzada");
+				 
+				//Crea una scrollBar horizontal solo para la tabla (solo cuando se necesita aparece)
+				var oHSB = new sap.ui.core.ScrollBar("horiSB");
+				
+				oHSB.placeAt("flight");
+				 
 			} else {
 				$(".busqueda_avanzada").addClass("oculto");
+				this.getView().byId("btn1").setText("Búsqueda avanzada");
+				
+			
+				
+				
 			}
 		},
 		handfechacomite: function(oEvent) {
@@ -72,26 +125,20 @@ sap.ui.define([
 
 			//recuperamos los Items seleccionados
 			/*var sQuery = oEvent.mParameters.value;*/
-			
-			//************recuperar valor para Datepicker****************
-/*			var oSource = oEvent.getSource();
-			var sQuery = oSource.getDateValue();*/
-			
-			//************recuperar valor para DateRangeSelection****************
-			var sQueryFrom = oEvent.mParameters.from;
-			var sQueryTo = oEvent.mParameters.to;
+			var oSource = oEvent.getSource();
+			var sQuery = oSource.getDateValue();
 
 
 
-/*			function sumarDias(fecha, dias) {
+			function sumarDias(fecha, dias) {
 				fecha.setDate(fecha.getDate() + dias);
 				return fecha;
-			}*/
+			}
 
 			//definimos la variable donde se va a guardar el text o key del Item seleccionado
 
-/*			var d = sQuery;
-			var incremental = sumarDias(d, 1);*/
+			var d = sQuery;
+			var incremental = sumarDias(d, 1);
 
 			
 			//recuperamos los datos de la tabla
@@ -118,7 +165,7 @@ sap.ui.define([
 			}
 
 			//cargamos el filtro con los parámetros a filtrar
-			aFilter.push(new Filter("Fldate", FilterOperator.BT, sQueryFrom, sQueryTo));
+			aFilter.push(new Filter("Fldate", FilterOperator.EQ, sQuery, incremental));
 
 
 			//aplicamos el filtro
@@ -126,5 +173,9 @@ sap.ui.define([
 			oTable.setVisibleRowCount(10);
 		}
 
+	
+			
+
+		
 	});
 });

@@ -14,7 +14,20 @@
 	color:white;
 	font-weight: bold;
 }
+.negrita{
+	font-weight: bold;
+}
+.alingDerech{
+	float:right;
+}
 
-#__header0-pinBtn {
+#__header0-pinBtn { /*oculta un botón con icono*/
 	display:none;
 }
+
+.btn{
+	font-weight: bold;
+	background-color:red;
+	float:right;
+}
+

@@ -1,7 +1,7 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"CDCI1/model/models",
+	"CDCI1/model/models"
 /*	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator"*/
 ], function(UIComponent, Device, models) {
@@ -41,14 +41,16 @@ sap.ui.define([
 				this.getEventBus().publish("Component", "MetadataFailed");
 			}, this);
 			
-
+			
 			
 			this.setModel(oModel, "vuelos");
+			
 			
 /*			var oTable = sap.ui.getCore("Vuelos");*/
 			/*oTable.setVisibleRowCount(10);*/
 			
-		
+			
+				 
 			
 		}
 	});

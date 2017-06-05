@@ -19,6 +19,7 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 
 		<script>
+	
 			sap.ui.getCore().attachInit(function() {
 				new sap.m.Shell({
 					app: new sap.ui.core.ComponentContainer({
@@ -27,15 +28,9 @@
 					})
 				}).placeAt("content");
 			});
+				
 		</script>
-		<!--No funciona-->
-			<script>
-				$(document).ready(function () {
-				var f = new Date(); 
-				$('.fecha').html("julian");
-				});
-			</script>
-		<!--Fin No funciona-->
+		
 	</head>
 
 	<body class="sapUiBody" id="content">
