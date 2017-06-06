@@ -8,15 +8,25 @@
       "ui5ActiveVersion": null,
       "ui5VerSource": null,
       "isDefaultVersion": 0,
-      "urlParameters": [],
+      "urlParameters": [
+        {
+          "paramName": "",
+          "paramValue": ""
+        }
+      ],
       "hashParameter": "",
-      "backendSystem": [],
+      "backendSystem": [
+        {
+          "source": "sflight",
+          "destinations": "sflight"
+        }
+      ],
       "urlParametersNotNeeded": false,
       "_metadata": {
-        "runnerId": "webapprunner",
         "id": 9845658,
+        "runnerId": "webapprunner",
         "displayName": "Run index.html",
-        "lastRunTimeStamp": 1496659915576
+        "lastRunTimeStamp": 1496733643657
       }
     }
   ]

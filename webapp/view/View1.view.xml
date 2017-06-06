@@ -44,9 +44,9 @@
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="{i18n>width_layaut}">
 								<Label text="{i18n>fechaComite}" class="letraBlaca"/>
-								<DatePicker width="{i18n>width_cajas}" change="handfechacomite">
+								<DateRangeSelection width="{i18n>width_cajas}" change="handfechacomite">
 									
-								</DatePicker>
+								</DateRangeSelection>
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="{i18n>width_layaut}">
 								<Label text="{i18n>tipExp}" class="letraBlaca"/>
@@ -171,13 +171,13 @@
 			<t:Table rows="{path:'vuelos>/FLIGHTSet' , filters: { path: 'Carrid', operator: 'EQ', value1: 'AA' } }" id="Vuelos" selectionMode="None"
 				visibleRowCount="10" firstVisibleRow="3">
 				<t:columns>
-					<t:Column>
+					<t:Column demandPopin="false" sortProperty="vuelos>Carrid">
 						<Label text="{i18n>EMPRESA}"/>
 						<t:template>
 							<Text text="{vuelos>Carrid}"/>
 						</t:template>
 					</t:Column>
-					<t:Column>
+					<t:Column demandPopin="false" sortProperty="Connid">
 						<Label text="{i18n>numExpediente}"/>
 						<t:template>
 							<Text text="{path:'vuelos>Connid'}"/>
@@ -196,7 +196,7 @@
 							<Text text="{vuelos>Connid}"/>
 						</t:template>
 					</t:Column>
-					<t:Column id="colDescripcion" width="100px"> <!--cambiar a porcentaje o algo-->
+					<t:Column width="250px">
 						<Label text="{i18n>descripción}"/>
 						<t:template>
 							<Text text="{vuelos>Connid}"/>
