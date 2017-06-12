@@ -1,16 +1,12 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator",
-	"sap/ui/core/format/DateFormat",
-	"sap/ui/model/Sorter",
-	"sap/ui/table/SortOrder"
-
-], function(Controller, Filter, FilterOperator, DateFormat, Sorter, SortOrder) {
+	"sap/ui/model/FilterOperator"
+], function(Controller, Filter, FilterOperator) {
 	"use strict";
 
 	return Controller.extend("CDCI1.controller.View1", {
-
+		
 		onAfterRendering  : function() {
 			
 			var that = this;//Para que la fecha y la hora se actualice continuamoente
@@ -59,20 +55,22 @@ sap.ui.define([
 			//recuperamos los Items seleccionados
 			var oSelectedItem = oEvent.getParameter("selectedItems");
 
+			
+
 			//definimos la variable donde se va a guardar el text o key del Item seleccionado
 			var sQuery;
+
 
 			//recuperamos los datos de la tabla
 			var oTable = this.getView().byId("Vuelos");
 			var oBinding = oTable.getBinding("rows");
-			
 
 			//definimos el array dónde se van a definir los parámetros del filtro
 			var aFilter = [];
-
-			//cargamos el filtro con los elementos del filtro que ya están aplicados
-			//y eliminamos los elementos pertenecientes al filtro a aplicar
-			//para mantener el resto de filtros activos
+			
+			/*cargamos el filtro con los elementos del filtro que ya están aplicados
+			y eliminamos los elementos pertenecientes al filtro a aplicar
+			para mantener el resto de filtros activos*/
 
 			for (i = 0; i < oBinding.aFilters.length; i++) {
 				aFilter[i] = oBinding.aFilters[i];
@@ -83,14 +81,14 @@ sap.ui.define([
 					aFilter.splice(i, 1);
 				}
 			}
-
+			
 			//cargamos el filtro con los parámetros a filtrar
 			for (var i = 0; i < oSelectedItem.length; i++) {
 
 				sQuery = oSelectedItem[i].mProperties.key;
 				aFilter.push(new Filter("Carrid", FilterOperator.EQ, sQuery));
 			}
-
+			
 			//eliminamos el filtro aplicado en la carga inicial de datos
 			oBinding.aApplicationFilters = [];
 
@@ -103,16 +101,47 @@ sap.ui.define([
 			//correspondiente para que devuelva los datos correctos
 		},
 
+//Pruebas: cambiar estado según aprueba o rechaza
+
+// hacer que aparezca estos iconons
+/*<core:Icon src="sap-icon://sys-enter-2" class="size2" color="green"/>
+							<core:Icon src="sap-icon://sys-cancel" class="size2" color="red"/>*/
+cambia_estado: function(oEvent) {
+	//$(".cambia_estado");
+	var boton = oEvent.getSource().getId();
+
+	//__button4-__clone12
+	//9 y 23
+	//12 y 26
+	var splitt = boton.split("__"); //divide el string en dos partes separando por "__", la parte [1] tiene button4- y la parte [2] tiene cloneXX
+	var res = splitt[2].substring(5); //metemos en res el valor del string splitt[2] (cloneXX), contado desde la posicion 5 hasta el final (Solo las XX)
+
+	//Aprobar
+	if (boton.includes("button4")){
+		//Modificamos el SRC del coreicon (id coreicon) en la posicon res-3 para button4 y res-4 para button5
+		this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 3) ).setSrc("sap-icon://sys-enter-2");
+		
+
+
+	}
+	//rechazar
+	else if(boton.includes("button5")) {
+		this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 4)).setSrc("sap-icon://sys-cancel");
+	
+	}
+
+},
+
+//Fin prueba
 		busqueda_avanzada: function(oEvent) {
 			if (oEvent.mParameters.pressed == true ) {
 				$(".busqueda_avanzada").removeClass("oculto");
 				 this.getView().byId("btn1").setText("Ocultar búsqueda avanzada");
 				 
 				//Crea una scrollBar horizontal solo para la tabla (solo cuando se necesita aparece)
-				var oHSB = new sap.ui.core.ScrollBar("horiSB");
-				
+				var oHSB = new sap.ui.core.ScrollBar("horiSB")
 				oHSB.placeAt("flight");
-				 
+				
 			} else {
 				$(".busqueda_avanzada").addClass("oculto");
 				this.getView().byId("btn1").setText("Búsqueda avanzada");
@@ -127,33 +156,30 @@ sap.ui.define([
 
 			//recuperamos los Items seleccionados
 			/*var sQuery = oEvent.mParameters.value;*/
+			var oSource = oEvent.getSource();
+			var sQuery = oSource.getDateValue();
 
-			//************recuperar valor para Datepicker****************
-			/*			var oSource = oEvent.getSource();
-						var sQuery = oSource.getDateValue();*/
 
-			//************recuperar valor para DateRangeSelection****************
-			var sQueryFrom = oEvent.mParameters.from;
-			var sQueryTo = oEvent.mParameters.to;
 
-			/*			function sumarDias(fecha, dias) {
-							fecha.setDate(fecha.getDate() + dias);
-							return fecha;
-						}*/
+			function sumarDias(fecha, dias) {
+				fecha.setDate(fecha.getDate() + dias);
+				return fecha;
+			}
 
 			//definimos la variable donde se va a guardar el text o key del Item seleccionado
 
-			/*			var d = sQuery;
-						var incremental = sumarDias(d, 1);*/
+			var d = sQuery;
+			var incremental = sumarDias(d, 1);
 
+			
 			//recuperamos los datos de la tabla
 			var oTable = this.getView().byId("Vuelos");
 			var oBinding = oTable.getBinding("rows");
-
+			
 			//definimos el array dónde se van a definir los parámetros del filtro
 
 			var aFilter = [];
-
+			
 			//cargamos el filtro con los elementos del filtro que ya están aplicados
 			//y eliminamos los elementos pertenecientes al filtro a aplicar
 			//para mantener el resto de filtros activos
@@ -170,31 +196,17 @@ sap.ui.define([
 			}
 
 			//cargamos el filtro con los parámetros a filtrar
-			aFilter.push(new Filter("Fldate", FilterOperator.BT, sQueryFrom, sQueryTo));
+			aFilter.push(new Filter("Fldate", FilterOperator.EQ, sQuery, incremental));
+
 
 			//aplicamos el filtro
 			oBinding.filter(aFilter);
 			oTable.setVisibleRowCount(10);
-		},
-
-		sortDeliveryDate: function(oEvent) {
-			var oView = this.getView();
-			/*oCurrentColumn.setSorted(true);*/
-
-			var oTable = oView.byId("Vuelos");
-			
-			var mParams = oEvent.getParameters();
-			var oBinding = oTable.getBinding("rows");
-			
-			
-	     // apply grouping
-	     var aSorters = [];
-	     var sPath = mParams.column.mProperties.sortProperty;
-	     if (mParams.sortOrder=="Descending"){
-	     var bDescending = true;
-	     }else{var bDescending = false;}
-	     aSorters.push(new sap.ui.model.Sorter(sPath, bDescending));
-	     oBinding.sort(aSorters);
 		}
+
+	
+			
+
+		
 	});
 });

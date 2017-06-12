@@ -1,7 +1,10 @@
 .imagen_tren {
-    background: url('images/trenes-tematicos-renfe-2016.jpg');
+    background: url('images/renfe.jpg');
 }
 
+centrar{
+	text-align:center;
+}
 .oculto {
     display: none;
 }
@@ -29,5 +32,10 @@
 	font-weight: bold;
 	background-color:red;
 	float:right;
+}
+
+
+#__text7{
+	visibility: hidden; /*Espacio entre fecha y hora*/
 }
 

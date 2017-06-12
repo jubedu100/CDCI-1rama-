@@ -19,6 +19,7 @@
 						<layout:HorizontalLayout class="alingDerech">
 							<Text text="Fecha: " class="negrita"/>
 							<Text id="fecha"/>
+							<Text text="--"/>
 							<Text text="Hora: " class="negrita"/>
 							<Text id="hora"/>
 						</layout:HorizontalLayout>
@@ -44,9 +45,9 @@
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="{i18n>width_layaut}">
 								<Label text="{i18n>fechaComite}" class="letraBlaca"/>
-								<DateRangeSelection width="{i18n>width_cajas}" change="handfechacomite">
+								<DatePicker width="{i18n>width_cajas}" change="handfechacomite">
 									
-								</DateRangeSelection>
+								</DatePicker>
 							</layout:VerticalLayout>
 							<layout:VerticalLayout width="{i18n>width_layaut}">
 								<Label text="{i18n>tipExp}" class="letraBlaca"/>
@@ -171,13 +172,13 @@
 			<t:Table rows="{path:'vuelos>/FLIGHTSet' , filters: { path: 'Carrid', operator: 'EQ', value1: 'AA' } }" id="Vuelos" selectionMode="None"
 				visibleRowCount="10" firstVisibleRow="3">
 				<t:columns>
-					<t:Column demandPopin="false" sortProperty="vuelos>Carrid">
+					<t:Column>
 						<Label text="{i18n>EMPRESA}"/>
 						<t:template>
 							<Text text="{vuelos>Carrid}"/>
 						</t:template>
 					</t:Column>
-					<t:Column demandPopin="false" sortProperty="Connid">
+					<t:Column>
 						<Label text="{i18n>numExpediente}"/>
 						<t:template>
 							<Text text="{path:'vuelos>Connid'}"/>
@@ -196,7 +197,7 @@
 							<Text text="{vuelos>Connid}"/>
 						</t:template>
 					</t:Column>
-					<t:Column width="250px">
+					<t:Column id="colDescripcion" width="100px"> <!--cambiar a porcentaje o algo-->
 						<Label text="{i18n>descripción}"/>
 						<t:template>
 							<Text text="{vuelos>Connid}"/>
@@ -229,9 +230,15 @@
 					<t:Column>
 						<Label text="{i18n>Estado}"/>
 						<t:template>
-							<core:Icon src="sap-icon://sys-enter-2" class="size2" color="green"/>
-							<core:Icon src="sap-icon://sys-cancel" class="size2" color="red"/>
-							<core:Icon src="sap-icon://sys-help" class="size2" color="blue"/>
+							<!--Pruebas-->
+							
+							<Text id="TextoPrueba" text=" "/><!--no quitar-->
+							
+							<!--<core:Icon src="sap-icon://sys-enter-2" class="size2" color="green"/>
+							<core:Icon src="sap-icon://sys-cancel" class="size2" color="red"/>-->
+							<core:Icon id="CoreIcon" src="sap-icon://sys-help" class="size2" color="blue"/>
+							
+							<!--Fin prueba-->
 						</t:template>
 					</t:Column>
 					<t:Column>
@@ -251,13 +258,13 @@
 					<t:Column>
 						<Label text="{i18n>aprobado}"/>
 						<t:template>
-							<Button type="Accept" icon="sap-icon://thumb-up" press="getSelectedColIndex" width="100%"></Button>
+							<Button type="Accept" icon="sap-icon://thumb-up" press="cambia_estado" width="100%"></Button>
 						</t:template>
 					</t:Column>
 					<t:Column>
 						<Label text="{i18n>rechazado}"/>
 						<t:template>
-							<core:Icon src="sap-icon://thumb-down" class="size2" color="red"/>
+							<Button type="Reject" icon="sap-icon://thumb-down" press="cambia_estado" width="100%"></Button>
 						</t:template>
 					</t:Column>
 				</t:columns>

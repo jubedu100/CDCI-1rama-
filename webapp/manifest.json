@@ -23,9 +23,6 @@
 					"annotations": []
 				}
 			}
-		},
-		"crossNavigation": {
-			"inbounds": {}
 		}
 	},
 	"sap.ui": {
@@ -45,8 +42,7 @@
 		},
 		"supportedThemes": [
 			"sap_hcb",
-			"sap_belize",
-			"sap_bluecrystal"
+			"sap_belize"
 		]
 	},
 	"sap.ui5": {
@@ -57,12 +53,15 @@
 		"dependencies": {
 			"minUI5Version": "1.30.0",
 			"libs": {
-				"sap.ui.core": {},
+				"sap.ca.ui": {
+					"minVersion": ""
+				},
+				"sap.collaboration": {},
 				"sap.m": {},
+				"sap.ui.comp": {},
+				"sap.ui.core": {},
 				"sap.ui.layout": {},
 				"sap.ushell": {},
-				"sap.collaboration": {},
-				"sap.ui.comp": {},
 				"sap.uxap": {}
 			}
 		},
@@ -92,10 +91,6 @@
 	},
 	"sap.platform.hcp": {
 		"uri": "webapp",
-		"_version": "1.1.0"
-	},
-	"sap.platform.abap": {
-		"uri": "/sap/bc/ui5_ui5/sap/z_prueba_renfe/webapp",
 		"_version": "1.1.0"
 	}
 }
