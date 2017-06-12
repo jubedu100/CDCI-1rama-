@@ -33,8 +33,8 @@ sap.ui.define([
 			// Create and set domain model to the component
 			var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, {
 				json: true,
-/*				user: "ZUNISYS01",
-				password: "ZUNISYS01",*/
+				user: "ZUNISYS01",
+				password: "ZUNISYS01",
 				loadMetadataAsync: true
 			});
 			oModel.attachMetadataFailed(function() {
