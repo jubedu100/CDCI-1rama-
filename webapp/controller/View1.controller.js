@@ -120,12 +120,12 @@ sap.ui.define([
 			//Aprobar
 			if (boton.includes("button4")) {
 				//Modificamos el SRC del coreicon (id coreicon) en la posicon res-3 para button4 y res-4 para button5
-				this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 3)).setSrc("sap-icon://sys-enter-2");
+				this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 3)).setSrc("sap-icon://sys-enter-2").setColor("green");
 
 			}
 			//rechazar
 			else if (boton.includes("button5")) {
-				this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 4)).setSrc("sap-icon://sys-cancel");
+				this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 4)).setSrc("sap-icon://sys-cancel").setColor("red");
 
 			}
 
