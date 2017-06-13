@@ -120,12 +120,12 @@ sap.ui.define([
 			//Aprobar
 			if (boton.includes("button4")) {
 				//Modificamos el SRC del coreicon (id coreicon) en la posicon res-3 para button4 y res-4 para button5
-				this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 3)).setSrc("sap-icon://sys-enter-2").setColor("green");
+				this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 3)).setSrc("sap-icon://sys-enter-2");
 
 			}
 			//rechazar
 			else if (boton.includes("button5")) {
-				this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 4)).setSrc("sap-icon://sys-cancel").setColor("red");
+				this.getView().byId("__xmlview0--CoreIcon-__clone" + (res - 4)).setSrc("sap-icon://sys-cancel");
 
 			}
 
@@ -240,7 +240,18 @@ sap.ui.define([
 			*/
 
 			/*var docx = new DOCXjs();*/
-			var doc = new Docxtemplater();
+/*			var JSZip = require('jszip');*/
+/*var Docxtemplater = require('docxtemplater');*/
+/*var fs = require('fs');
+var path = require('path');*/
+//Load the docx file as a binary
+/*var content = fs
+.readFileSync(path.resolve(__dirname, 'input.docx'), 'binary');
+var zip = new JSZip(content);*/
+
+			var doc = new DOCXjs();
+			/*var doc = new Docxgen();*/
+			/*var doc = new Docxtemplater();*/
 			/*			var doc = new jsPDF();*/
 
 			/*		doc.setFontSize(30);
@@ -254,7 +265,7 @@ sap.ui.define([
 				doc.text(20, 100, 'Rating: ');*/
 
 			/*			doc.save('orderList.pdf');*/
-			/*			doc.save('orderList.docx');*/
+						doc.output('orderList.docx');
 
 		}
 	});
