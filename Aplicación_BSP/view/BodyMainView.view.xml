@@ -1,0 +1,188 @@
+<mvc:View controllerName="ZPPM_APP_VOD10.controller.BodyMainView"
+          xmlns:l="sap.ui.layout"
+          xmlns:core="sap.ui.core"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:micro="sap.suite.ui.microchart" >
+
+
+  <Text text="{i18n>inicio}" class="fondo-superior"></Text>
+  <VBox class="margenSuperior">
+
+  <HBox class="inicioContainer">
+    <VBox class="verticalbox">
+      <VBox class="sapUiSmallMargin zppm_CG_OffertsMain">
+    <l:VerticalLayout class="zppm_VL_OffertsMain">
+
+<!--     *************************       CABECERA      *************************      -->
+
+      <l:HorizontalLayout class="zppm_HL1_OffertsMain">
+        <Text text="{i18n>mis}" class="misOffertInicio header-tabla"></Text>
+        <Text text="{i18n>ofertas}" class="ofertasOffertInicio header-tabla negrita"></Text>
+        <Button id="offertInicioLTs" class="zppm_offertInicioLTs zppm_button" text="{i18n>mislts}" press="onMisLTsOffert"></Button>
+      </l:HorizontalLayout>
+
+      <l:VerticalLayout class="zppm_HL3_OffertsMain">
+
+      <!--                      Filtro de ofertas                      -->
+
+    <!--<ComboBox id="ComboOffer"
+              selectionChange="handleSelectionChangeOffer"
+              selectionFinish="handleSelectionFinishOffer"
+              width="200px"
+              showSecondaryValues= "true">
+    </ComboBox>-->
+    <!--<IconTabBar id="idIconTabBarFiori2"
+                upperCase="true"
+                class="sapUiResponsiveContentPadding">
+      <items>
+        <IconTabFilter text="Creados"
+                       count="0">
+        </IconTabFilter>
+        <IconTabFilter text="Liberados"
+                       count="0">
+        </IconTabFilter>
+      </items>
+    </IconTabBar>-->
+
+<!--    *************************     TABLA DE OFERTAS    *************************     -->
+              <ScrollContainer horizontal="true"
+                   vertical="true"
+                             focusable="false"
+                             class="zppm_SC_OffertsMain">
+                  <content>
+            <List id="offertFilterInicio"
+                  mode="SingleSelectMaster"
+                  items="{path: 'OfertaOD>/OfertaSet'}"
+                  updateFinished="onUpdateFinishedOfferts"
+                  selectionChange="onSelectionChangeOff">
+
+              <CustomListItem class="zppm_ROW_OffertsMain">
+                <HBox class="zppm_aux">
+                  <VBox>
+                    <HBox class="fila-superior">
+
+                      <!-- Descripcion -->
+                      <!--<Label text="{OfertaOD>Descrp}" class="zppm_labelOferta_Desc"/>-->
+                      <Label text="{OfertaOD>Externalid}" class="zppm_labelOferta_EID"/>
+
+                      <!-- Separador -->
+                      <Label text=" " class="zppm_labelOferta_SPT"/>
+
+                      <!-- External ID -->
+                      <!--<Label text="{OfertaOD>Externalid}" class="zppm_labelOferta_EID"/>-->
+                      <Label text="{OfertaOD>Descrp}" class="zppm_labelOferta_Desc"/>
+                    </HBox>
+
+                    <!-- Subfila de una linea -->
+                    <HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom zppm_HBox subfila">
+
+                    <!-- CodPetCliente -->
+                    <!--<Label text="{OfertaOD>CodPetCliente}" class=""/>-->
+
+                    <!-- Fecha -->
+                    <Label text="{OfertaOD>Fecha}" class="fechaOfertaInicio"/>
+
+                    <!-- Estado -->
+                    <Label text="{OfertaOD>Estado}" class="zppm_labelOferta_EST"></Label>
+
+                    <!-- Reloj + Horas -->
+                    <Label text="{OfertaOD>Horas}" class="zppm_labelOferta_REJ"></Label>
+
+                    <!-- Billete + Presupuesto -->
+                    <Label text="{OfertaOD>Presupuesto}" class="zppm_labelOferta_PRS"></Label>
+                    <!--<Label text="{OfertaOD>Moneda}" class="zppm_labelOferta_MND"></Label>-->
+                  </HBox>
+                  </VBox>
+                </HBox>
+              </CustomListItem>
+            </List>
+          </content>
+        </ScrollContainer>
+      </l:VerticalLayout>
+    </l:VerticalLayout>
+  </VBox>
+    </VBox>
+    <VBox class="verticalbox">
+    <VBox class="sapUiSmallMargin zppm_CG_ProjectsMain">
+    <l:VerticalLayout class="zppm_VL_OffertsMain">
+      <!--     *************************       CABECERA      *************************      -->
+      <l:HorizontalLayout class="zppm_HL1_OffertsMain">
+        <Text text="{i18n>mis}" class="misProjInicio header-tabla"></Text>
+        <Text text="{i18n>proyectos}" class="proyectosProjInicio header-tabla negrita"></Text>
+        <Button id="projInicioLTs" class="zppm_projInicioLTs zppm_button" text="{i18n>mislts}" press="onMisLTsProject"></Button>
+      </l:HorizontalLayout>
+
+      <l:VerticalLayout class="zppm_HL3_OffertsMain tabla-proyectos">
+
+        <!--                      Filtro de proyectos                     -->
+
+        <!--<ComboBox id="ComboProj"
+                  selectionChange="handleSelectionChangeProj"
+                  selectionFinish="handleSelectionFinishProj"
+                  width="200px"
+                  showSecondaryValues= "true">
+        </ComboBox>-->
+
+        <!--    *************************     TABLA DE PROYECTOS    *************************     -->
+        <ScrollContainer horizontal="true" vertical="true" focusable="true" class="zppm_SC_OffertsMain">
+          <content>
+            <List id="projFilterInicio"
+                  mode="SingleSelectMaster"
+                  items="{path: 'ProjectOD>/ProjectSet'}"
+                  updateFinished="onUpdateFinishedProjects"
+                  selectionChange="onSelectionChangeProj">
+              <CustomListItem class="zppm_ROW_OffertsMain">
+                <VBox class="zppm_aux">
+
+
+
+                  <!-- Descripcion -->
+                  <HBox class="project-inf-cabecera">
+                    <Label text="{ProjectOD>Externalid}"/>
+                    <Label text=" "/>
+                    <Label text="{ProjectOD>Descrp}" class="zppm_labelOferta_Desc"/>
+                  </HBox>
+
+                  <HBox class="datos-personales">
+                    <VBox>
+                      <Label text="{ProjectOD>Responsable}" class=""/>
+                      <!--<Label text="{ProjectOD>Ceco}" class=""/>-->
+                    </VBox>
+
+
+                    <Label text="{ProjectOD>Fecha}" class=""/>
+                    <core:Icon src="sap-icon://circle-task-2"
+                               class="zppm_LT_circle_color_alto circulo"
+                               color="#031E48">
+                            <core:layoutData>
+                              <FlexItemData growFactor="1" />
+                              </core:layoutData>
+                            </core:Icon>
+                    <Label text="{ProjectOD>Riesgo}" class="riesgo"/>
+
+                  <!--<micro:RadialMicroChart percentage="{ProjectOD>Gavan}"
+                  class="zppm_GAVAN_ProjectsMain porcentaje_riesgo"
+                  width="34px"
+                  />-->
+                  <!-- Grado de avance -->
+                  <micro:RadialMicroChart percentage="{ProjectOD>Gavan}"
+                                          class="zppm_GAVAN_ProjectsRow"
+                                          width="34px"
+                                          size="S">
+                  </micro:RadialMicroChart>
+                  <Label text="{ProjectOD>Gavan}" class="zppm_gavan_invisible"/>
+                  </HBox>
+                </VBox>
+              </CustomListItem>
+            </List>
+          </content>
+        </ScrollContainer>
+      </l:VerticalLayout>
+    </l:VerticalLayout>
+  </VBox>
+    </VBox>
+  </HBox>
+  </VBox>
+
+  </mvc:View>

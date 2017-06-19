@@ -1,0 +1,1761 @@
+.zppm_filter_proj_misLTs {
+	
+}
+
+.zppm_filter_ofer_misLTs {
+	
+}
+
+/* Creamos el scroll para el contenido y ocultamos el general para que el toolheader siemrpe este*/
+/*.zppm_body_main {
+overflow-y:hidden;}*/
+.zppm_body_main {
+	min-height: 50px !IMPORTANT;
+}
+/*.zppm_body_app {overflow-y:scroll !IMPORTANT;}*/
+
+/* No se ve la tool header?*/
+.zppm_toolheader_aux {
+	min-height: 50px !IMPORTANT;
+}
+
+.zppm_Offert_Estado_Revision_Plan {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	color: green !IMPORTANT;
+}
+
+.zppm_Offert_Estado_En_Analisis {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	color: yellow !IMPORTANT;
+}
+
+.zppm_Offert_Estado_En_Curso {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	color: red !IMPORTANT;
+}
+
+.zppm_Offert_Estado_Estimada {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	color: green !IMPORTANT;
+}
+
+.zppm_Offert_Estado_Finalizado {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	color: blue !IMPORTANT;
+}
+
+.zppm_Offert_Estado_Pdte_Cliente {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	color: brown !IMPORTANT;
+}
+
+.zppm_Offert_Estado_Rechazado {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	color: gray !IMPORTANT;
+}
+
+/*******/
+#__xmlview1--inicioHeader-count {
+	background-color: transparent
+}
+
+/*==============================*/
+/*       G E N E R A L E S      */
+/*==============================*/
+div.sapMNav {
+	overflow: visible;
+}
+
+.sapMNavItem.sapUiView.sapUiXMLView {
+	display: block !important;
+}
+
+.sapMNavItem.sapUiView.sapUiXMLView.sapMNavItemHidden {
+	display: none !important;
+}
+
+.zppm_hlayout {
+	width: 100%;
+}
+
+.zppm_hlayout>.sapUiHLayoutChildWrapper {
+	width: 100%;
+}
+
+.sapMITBContainerContent {
+	display: none;
+}
+
+.zppm_GAVAN_Projects text, .zppm_GAVAN_Projects_detail text {
+	display: block !important;
+}
+
+.sapMITH {
+	box-shadow: none !important;
+}
+
+.sapMITBHead {
+	margin: 0 !important;
+}
+
+.datos-personales {
+	text-transform: uppercase;
+}
+
+.datos-personales div {
+	text-align: left !important;
+	width: 50% !important;
+}
+
+.sapUiIcon:before {
+	content: attr(data-sap-ui-icon-content);
+	speak: none;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+.element-invisible {
+	width: 1px;
+	height: 1px;
+	clip: rect(1px, 1px, 1px, 1px);
+	overflow: hidden;
+}
+
+button.zppm_button .sapMBtnInner:hover, button.zppm_button:hover>.sapMBtnInner,
+	button.zppm_button:focus>.sapMBtnInner, button.zppm_button .sapMBtnInner:focus
+	{
+	color: #fff;
+	background: #ec0000;
+	text-shadow: unset;
+}
+
+td.sapMListTblCellNoData {
+	text-align: left;
+}
+
+/*==============================*/
+/*  F I N   G E N E R A L E S   */
+/*==============================*/
+
+/*LISTADOS*/
+.zppm_CG_ProjectsMain .sapMListUl li, .zppm_CG_OffertsMain .sapMListUl li
+	{
+	background: #fff url('../images/flecha.png') no-repeat 98% center;
+}
+
+.zppm_CG_ProjectsMain .sapMListUl li:hover, .zppm_CG_ProjectsMain .sapMListUl li:focus,
+	.zppm_CG_OffertsMain .sapMListUl li:hover, .zppm_CG_OffertsMain .sapMListUl li:focus
+	{
+	background: #f7f7f7 url('../images/flecha.png') no-repeat 98% center;
+}
+
+.sapMListUl li {
+	height: auto;
+	min-height: 100px;
+	background: #fff;
+	display: block;
+	padding: 20px 0 20px 10px !important;
+	border: none;
+	outline: 1px solid #D9D9D9;
+}
+
+.sapMListUl li:hover, .sapMListUl li:focus {
+	background: #f7f7f7;
+	outline: 1px solid #D9D9D9;
+	border: none;
+}
+/*.sapMListUl > li:after{content:" ";width:90%;display:block;height:1px;border-bottom:1px solid #D9D9D9;padding:2px 0;margin:0 auto;}*/
+
+/*=================================================*/
+/*  T A B L A  P R O Y E C T O S  I N T E R I O R  */
+/*=================================================*/
+.tabla-interior-proyectos .sapMListUl {
+	background: #fff !important;
+}
+
+.tabla-interior-proyectos .sapMListUl li {
+	background: unset;
+	display: block;
+	padding: 20px 0 20px 10px !important;
+	border-bottom: 1px solid #D9D9D9 !important;
+}
+
+.tabla-interior-proyectos .sapMListUl li:hover,
+	.tabla-interior-proyectos .sapMListUl li:focus {
+	background: #F4F7F8 !important;
+	outline: 1px solid #D9D9D9;
+	border: 0px solid;
+}
+
+.tabla-interior-proyectos .zppm_Proj_VB_Row {
+	padding-right: 5% !important;
+	width: 35%;
+}
+
+.tabla-interior-proyectos .zppm_Proj_VB_Row+div {
+	width: 20% !important;
+}
+
+.tabla-interior-proyectos .zppm_ROW_Projects {
+	background: #fff
+}
+
+.tabla-interior-proyectos .sapUiSmallMarginTopBottom {
+	margin: 0 !important;
+}
+
+.tabla-interior-proyectos .subfilaproyectos>.sapMFlexItem:first-child+div label
+	{
+	padding-right: 10px !important;
+	margin: 8px 0;
+}
+
+.tabla-interior-proyectos .subfilaproyectos>.sapMFlexItem:first-child+div+div
+	{
+	flex-grow: 0 !important;
+}
+
+.tabla-interior-proyectos .subfilaproyectos>.sapMFlexItem:first-child+div+div+div label
+	{
+	padding: 0 10px !important;
+	text-transform: uppercase;
+}
+
+.tabla-interior-proyectos .subfilaproyectos>.sapMFlexItem:first-child+div+div+div+div
+	{
+	display: inline-block;
+	width: 33px !important;
+	position: absolute;
+	right: 10px;
+}
+
+.tabla-interior-proyectos .subfilaproyectos>.sapMFlexItem:first-child+div+div+div+div .zppm_GAVAN_ProjectsRow
+	{
+	margin: 0 !important;
+}
+
+.tabla-interior-proyectos .subfilaproyectos>.sapMFlexItem:first-child+div+div+div+div .zppm_GAVAN_ProjectsRow svg
+	{
+	width: 50px !important;
+	height: 50px !important;
+	margin-top: -5px;
+}
+
+.tabla-interior-proyectos .subfilaproyectos>.sapMFlexItem:first-child+div+div+div+div .zppm_GAVAN_ProjectsRow text
+	{
+	display: block !important;
+}
+
+.tabla-interior-proyectos .sapUiIcon {
+	margin: 5px 0;
+}
+
+.tabla-interior-proyectos .zppm_Proj_Riesgo {
+	margin: 8px 0;
+}
+
+/*------------- O C U L T A D O -----------*/
+.zppm_HL_Proyects.zppm_filter_proj_misLTs .zppm_CG_Proyects {
+	display: none;
+}
+
+.zppm_HL_Proyects.zppm_filter_proj_misLTs .sapUiHLayoutChildWrapper:first-child+.sapUiHLayoutChildWrapper
+	{
+	display: block;
+}
+
+.zppm_HL_Proyects.zppm_filter_proj_misLTs .zppm_Proj_info {
+	display: none;
+}
+
+.zppm_HL_Proyects.zppm_filter_proj_misLTs .sapUiHLayoutChildWrapper .wrapper-detalle-proyecto
+	{
+	margin: 25px auto 75px;
+	border: 2px solid #E0E0E0;
+}
+
+.zppm_HL_Proyects.zppm_filter_proj_misLTs .sapUiHLayoutChildWrapper .wrapper-detalle-proyecto .contenido-tabla
+	{
+	height: 415px;
+}
+/*--------- F I N   O C U L T A D O -------*/
+
+/*=================================================*/
+/*  T A B L A  P R O Y E C T O S  I N T E R I O R  */
+/*=================================================*/
+
+/*===============================================*/
+/*           T A B L A  O F E R T A S            */
+/*===============================================*/
+.fila-superior>div {
+	width: 95% !important;
+	display: inline-block;
+}
+/*.fila-superior > div:first-child{width:30%!important;}*/
+.fila-superior>div:first-child+div {
+	width: 20px !important;
+}
+
+.fila-superior>div:first-child+div .zppm_labelOferta_SPT {
+	margin-top: -2px;
+}
+
+.fila-superior>div label {
+	display: block;
+	white-space: nowrap;
+	width: 100%;
+	text-overflow: ellipsis;
+}
+
+.fila-superior .sapMFlexItem label {
+	font-size: 14px;
+	padding-top: 0;
+}
+
+.subfila.zppm_HBox {
+	margin-top: 5px !important;
+}
+
+.subfila .sapMFlexItem {
+	display: inline-block;
+}
+
+.subfila .sapMFlexItem label {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	min-height: 20px;
+}
+
+.subfila .sapMFlexItem:first-child {
+	width: 18% !important;
+}
+
+.subfila .sapMFlexItem:first-child+div {
+	width: 39% !important;
+	text-align: center;
+	margin-right: 5px;
+}
+
+.subfila .sapMFlexItem label {
+	font-size: 12px;
+}
+
+.subfila .sapMFlexItem:first-child+div+div {
+	width: 19% !important;
+	margin-right: 5px !important;
+}
+
+.subfila .sapMFlexItem:first-child+div+div+div {
+	width: 29% !important;
+	text-align: right !important;
+}
+
+.subfila .sapMFlexItem:first-child+div+div+div label {
+	text-align: left !important;
+}
+
+.subfila .sapMFlexItem:first-child+div+div+div+div {
+	width: 7% !important;
+	margin: 0;
+	margin-left: -5px;
+}
+
+.subfila .sapMFlexItem:first-child+div+div+div+div label {
+	padding: 6px 0;
+}
+/*===============================================*/
+/*      F I N   T A B L A  O F E R T A S         */
+/*===============================================*/
+
+/*===============================================*/
+/*     P R O Y E C T O S    H O M E              */
+/*===============================================*/
+.tabla-proyectos .zppm_aux>.project-inf-cabecera.sapMFlexBoxAlignContentStretch
+	{
+	display: block;
+	width: 100% !important;
+	margin-bottom: 3px;
+}
+
+.tabla-proyectos .zppm_aux>.sapMFlexBoxAlignContentStretch+div.sapMFlexItem label
+	{
+	margin: 2px 0 0;
+}
+
+.tabla-proyectos .zppm_aux .sapMFlexBoxAlignContentStretch>.sapMFlexItem label
+	{
+	font-size: 14px;
+	margin: 0 5px 0 0;
+}
+
+.tabla-proyectos .zppm_aux .sapMFlexBoxAlignContentStretch>.sapMFlexItem .zppm_labelOferta_Desc
+	{
+	font-size: 14px;
+	display: inline-block;
+	white-space: nowrap;
+	padding: 0;
+}
+
+.tabla-proyectos .zppm_aux .sapMFlexBoxAlignContentStretch+.sapMFlexItem label
+	{
+	font-size: 12px;
+	margin: 13px 0 10px;
+}
+
+.tabla-proyectos .zppm_aux .sapMFlexBoxAlignContentStretch+.sapMFlexItem+div
+	{
+	flex-grow: 0 !important;
+}
+
+.tabla-proyectos .zppm_aux .sapMFlexBoxAlignContentStretch+.sapMFlexItem+div .circulo
+	{
+	padding: 3px 5px !important;
+}
+
+.tabla-proyectos .sapMFlexItem .riesgo {
+	margin: 20px 0;
+	font-size: 12px;
+	width: 45px;
+	text-transform: uppercase;
+}
+
+.tabla-proyectos .sapMFlexItem .porcentaje_riesgo {
+	display: block;
+}
+
+.tabla-proyectos .sapMFlexItem .porcentaje_riesgo svg {
+	display: block;
+	width: 50px !important;
+	height: 55px !important;
+}
+
+.tabla-proyectos .sapMFlexItem .porcentaje_riesgo svg text {
+	display: block !important;
+}
+
+/*ID Y DESCRIPCION*/
+.tabla-proyectos .zppm_aux .project-inf-cabecera>div {
+	width: 50%;
+	display: inline-block;
+	margin: 0 !important;
+	text-align: left !important;
+}
+
+.tabla-proyectos .zppm_aux .project-inf-cabecera>div:first-child {
+	width: 25%;
+	margin-right: 5px;
+}
+
+.tabla-proyectos .zppm_aux .project-inf-cabecera>div:first-child+div {
+	width: 20px !important;
+	margin: 0 5px;
+	vertical-align: top;
+}
+
+.tabla-proyectos .zppm_aux .project-inf-cabecera>div:first-child+div label
+	{
+	display: block;
+	text-align: center !important;
+	margin: 0;
+}
+
+.tabla-proyectos .zppm_aux .project-inf-cabecera>div:first-child label {
+	font-size: 14px;
+}
+
+/*--------------*/
+/* SEGUNDA FILA */
+/*--------------*/
+.tabla-proyectos .zppm_aux .project-inf-cabecera+div {
+	width: 100%;
+	display: block;
+}
+
+/*ID Y DESCRIPCION*/
+.tabla-proyectos .zppm_aux .datos-personales  div:first-child {
+	width: 45% !important;
+	display: inline-block;
+	margin: 0;
+}
+
+.tabla-proyectos .zppm_aux .datos-personales  div:first-child>div.sapMFlexItem
+	{
+	display: inline-block;
+	width: 100% !important;
+}
+
+/*FECHA*/
+.tabla-proyectos .zppm_aux .datos-personales div:first-child+div {
+	width: 15% !important;
+	display: inline-block;
+}
+
+/*NIVEL DE RIESGO*/
+.tabla-proyectos .zppm_aux .datos-personales div:first-child+div+div {
+	display: inline-block;
+	width: 20px !important;
+	vertical-align: top;
+}
+
+.tabla-proyectos .zppm_aux .datos-personales div:first-child+div+div+div
+	{
+	display: inline-block;
+	width: 15% !important;
+	vertical-align: top;
+	margin-left: 5px;
+}
+
+/*PORCENTAJE DE RIESGO*/
+.tabla-proyectos .zppm_aux .datos-personales div:first-child+div+div+div+div
+	{
+	display: inline-block;
+	width: 15% !important;
+	vertical-align: top;
+	margin-top: -15px;
+}
+
+.tabla-proyectos .zppm_aux .datos-personales div:first-child+div+div+div+div+div
+	{
+	height: 1px;
+	width: 1px;
+}
+
+/*------------------------*/
+/*    FIN SEGUNDA FILA    */
+/*------------------------*/
+/*===============================================*/
+/*     F I N    P R O Y E C T O S    H O M E     */
+/*===============================================*/
+
+/*=================================================*/
+/*   T A B L A   D E T A L L E   P R O Y E C T O   */
+/*=================================================*/
+.wrapper-detalle-proyecto {
+	width: 665px;
+	margin-top: 25px;
+}
+
+.wrapper-detalle-proyecto .zppm_Proj_info {
+	border: none;
+	height: 140px;
+	float: right;
+	margin-bottom: 10px;
+	background: #f7f7f7;
+}
+
+.wrapper-detalle-proyecto .zppm_Proj_info_inside {
+	display: block;
+	width: 100%;
+	margin: 10px 16px !important;
+}
+
+.wrapper-detalle-proyecto .zppm_Proj_info_inside .zppm_projDetail_subinfo>div
+	{
+	display: inline-block;
+	width: 10%;
+	text-align: center;
+	overflow: hidden;
+}
+
+.wrapper-detalle-proyecto .zppm_Proj_info_inside .zppm_projDetail_subinfo>div:first-child
+	{
+	width: 30%;
+	text-align: left;
+}
+
+.wrapper-detalle-proyecto .zppm_Proj_info_inside .zppm_projDetail_subinfo>div:first-child+div,
+	.wrapper-detalle-proyecto .zppm_Proj_info_inside .zppm_projDetail_subinfo>div:first-child+div+div
+	{
+	width: 15%;
+	margin-left: 0;
+	text-transform: uppercase;
+}
+
+.wrapper-detalle-proyecto .zppm_Proj_info_inside .zppm_projDetail_subinfo>div:first-child+div+div+div+div+div
+	{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: left !important;
+	width: 15%;
+}
+
+.wrapper-detalle-proyecto .zppm_Proj_info_inside .zppm_projDetail_subinfo>div:last-child
+	{
+	text-align: right;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla {
+	display: block;
+	width: 100%;
+	height: 270px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla td {
+	width: 10%;
+	vertical-align: middle !important;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla td:first-child+td {
+	width: 35%;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla td:first-child+td+td,
+	.wrapper-detalle-proyecto .contenido-tabla td:first-child+td+td+td {
+	padding: 0;
+	text-align: center !important;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla .distrib-text label {
+	
+}
+
+.wrapper-detalle-proyecto .contenido-tabla th:first-child {
+	width: 0%;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla th:first-child+th+th,
+	.wrapper-detalle-proyecto .contenido-tabla th:first-child+th+th+th+th {
+	text-align: center !important;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla td:first-child+td+td+td+td {
+	width: 20%;
+	text-align: center !important;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla td:first-child+td+td+td+td+td+td .sapMHBox
+	{
+	display: block;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla td:first-child+td+td+td+td+td+td .sapMHBox div:first-child
+	{
+	display: block;
+}
+
+.wrapper-detalle-proyecto .contenido-tabla td:first-child+td+td+td+td+td+td .sapMHBox span
+	{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-right: 5px;
+}
+
+.wrapper-detalle-oferta  .contenido-tabla .name_resp.sapMText,
+	.wrapper-detalle-oferta  .contenido-tabla
+    .id_resp.sapMText {
+	display: block;
+	margin-right: 5px;
+	font-size: 12px !important;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.contenido-tabla .name_resp.sapMText {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 12px;
+	margin-right: 10px;
+}
+
+.contenido-tabla .id_resp.sapMText {
+	color: #C3C3C3;
+	font-size: 12px;
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.datos-responsable>div {
+	display: block;
+	width: 35% !important;
+	overflow: hidden;
+}
+
+.datos-responsable>div:first-child {
+	width: 65% !important;
+}
+
+.datos-responsable>div.fech_trabj {
+	font-size: 14px !important;
+}
+
+.vertical-button {
+	float: right;
+	background: url('../images/button.png') no-repeat center center;
+	width: 20px;
+}
+
+.vertical-button:hover .sapMBtnIconFirst, .vertical-button:focus .sapMBtnIconFirst
+	{
+	background-color: transparent;
+}
+
+.vertical-button .sapMBtnIconFirst {
+	background: none;
+	min-width: inherit;
+}
+
+.vertical-button .sapUiIcon:before {
+	content: " " !important;
+}
+
+.vertical-button .sapMBtnInner {
+	border: none;
+}
+
+/*=======================================================*/
+/*   F I N  T A B L A  D E T A L L E   P R O Y E C T O   */
+/*=======================================================*
+
+
+
+/*===================================================*/
+/*    T A B L A   I N T E R I O R   O F E R T A S    */
+/*===================================================*/
+.wrapper-detalle-oferta {
+	width: 665px;
+	margin-top: 25px;
+}
+
+.zppm_CG_Offerts {
+	border: 2px solid #E0E0E0;
+	background: #f7f7f7 !IMPORTANT;
+	max-width: 410px;
+	min-width: 410px;
+	margin: 25px 50px !important;
+	display: block;
+	width: 90%;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside {
+	display: block;
+	width: 100%;
+	margin: 10px 16px !important;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside>.sapMHBox:first-child div
+	{
+	display: inline-block;
+	width: 200px
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside>.sapMHBox:first-child div:first-child+div
+	{
+	width: 75% !important;
+	text-align: right;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside .offertDetail_Descp {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside .zppm_offertDetail_subinfo
+	{
+	margin-top: 5%;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside .zppm_offertDetail_subinfo>div
+	{
+	display: inline-block;
+	width: 12%;
+	text-align: center;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside .zppm_offertDetail_subinfo>div:first-child
+	{
+	width: 25%;
+	text-align: left;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside .zppm_offertDetail_subinfo>div>div:first-child
+	{
+	height: 25px !important;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside .zppm_offertDetail_subinfo>div:first-child+div
+	{
+	width: 23%;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside .zppm_offertDetail_subinfo>div:first-child+div+div+div+div
+	{
+	width: 20%;
+}
+
+.wrapper-detalle-oferta .zppm_Offert_info_inside .zppm_offertDetail_subinfo>div:last-child
+	{
+	text-align: right;
+	width: 7%;
+}
+
+.wrapper-detalle-oferta .contenido-tabla {
+	height: 270px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.wrapper-detalle-oferta .contenido-tabla thead th {
+	text-align: center !important;
+	text-transform: uppercase;
+}
+
+.wrapper-detalle-oferta .contenido-tabla thead th:first-child {
+	text-align: left !important;
+	width: 0%;
+}
+
+.wrapper-detalle-oferta .contenido-tabla thead th span {
+	display: block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.wrapper-detalle-oferta .contenido-tabla tbody td {
+	padding: 14px 0;
+	vertical-align: middle;
+	text-align: center !important;
+}
+
+.wrapper-detalle-oferta .contenido-tabla tbody td .sapMText {
+	font-size: 12px !important;
+}
+
+.wrapper-detalle-oferta .contenido-tabla tbody td:first-child {
+	text-align: left !important;
+	padding: 14px 16px 14px 8px;
+}
+
+.wrapper-detalle-oferta .contenido-tabla tbody td:first-child+td {
+	text-align: left !important;
+	padding-left: 16px;
+}
+
+.wrapper-detalle-oferta .contenido-tabla tbody td:first-child+td+td+td {
+	text-align: left !important;
+}
+
+.wrapper-detalle-oferta .contenido-tabla tbody td:first-child+td+td+td+td span
+	{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: bottom;
+}
+
+/*-----------------------------------------------*/
+/*   B O T O N  L I N E A S  D E  T R A B A J O  */
+/*------------------------------------------------*/
+.zppm_proyLTsBtn, .zppm_offertLTsBtn {
+	font-size: 14px;
+	bottom: 65px;
+	right: 10px;
+	position: absolute;
+}
+
+.zppm_proyLTsBtn .sapMBtnDefault, .zppm_offertLTsBtn .sapMBtnDefault {
+	border-radius: 25px !IMPORTANT;
+	color: red;
+	background: #fff;
+	font-size: 14px !important;
+	font-weight: bold;
+}
+
+/*------------- O C U L T A D O -----------*/
+.zppm_HL_Offerts.zppm_filter_ofer_misLTs .zppm_CG_Offerts {
+	display: none;
+}
+
+.zppm_HL_Offerts.zppm_filter_ofer_misLTs .sapUiHLayoutChildWrapper:first-child+.sapUiHLayoutChildWrapper
+	{
+	display: block;
+}
+
+.zppm_HL_Offerts.zppm_filter_ofer_misLTs .zppm_Offert_info {
+	display: none;
+}
+
+.zppm_HL_Offerts.zppm_filter_ofer_misLTs .sapUiHLayoutChildWrapper .wrapper-detalle-oferta
+	{
+	margin: 25px auto 75px;
+	border: 2px solid #E0E0E0;
+}
+
+.zppm_HL_Offerts.zppm_filter_ofer_misLTs .sapUiHLayoutChildWrapper .wrapper-detalle-oferta .contenido-tabla
+	{
+	height: 308px;
+}
+/*--------- F I N   O C U L T A D O -------*/
+
+/*=====================================================*/
+/* F I N  T A B L A   I N T E R I O R   O F E R T A S  */
+/*=====================================================*/
+.EVALUACION {
+	color: blue !IMPORTANT;
+}
+
+.kolo {
+	color: red !IMPORTANT;
+}
+
+.zppm_LT_circle_color_alto { /*linea 80*/
+	color: red !IMPORTANT;
+}
+
+.verticalbox {
+	width: 500px;
+	margin: 0 50px;
+}
+
+.zppm_CG_ProjectsMain, .zppm_CG_OffertsMain {
+	margin: 25px 0 !important;
+}
+
+.zppm_Offertas_Superior, .zppm_Proy_Superior {
+	display: block;
+	color: #fff;
+	width: 100%;
+	max-width: 1280px;
+	font-family: Open-sans;
+	height: 150px;
+	background: linear-gradient(to right, rgba(185, 17, 23, 1) 0%,
+		rgba(208, 21, 23, 1) 31%, rgba(240, 50, 25, 1) 73%,
+		rgba(250, 47, 77, 1) 100%);
+	border-top: 1px solid #fff;
+	font-size: 26px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.zppm_Offertas_Superior .fondo-superior, .zppm_Proy_Superior .fondo-superior
+	{
+	display: inline-block;
+	color: #fff;
+	font-family: Open-sans;
+	height: unset;
+	background: none;
+	border-top: 0px solid #fff;
+	font-size: 26px;
+	padding: 35px 40px;
+	margin: 0;
+}
+
+.fondo-superior {
+	display: block;
+	color: #fff;
+	width: 100%;
+	max-width: 1280px;
+	font-family: Open-sans;
+	height: 150px;
+	background: linear-gradient(to right, rgba(185, 17, 23, 1) 0%,
+		rgba(208, 21, 23, 1) 31%, rgba(240, 50, 25, 1) 73%,
+		rgba(250, 47, 77, 1) 100%);
+	border-top: 1px solid #fff;
+	font-size: 26px;
+	padding: 35px 40px;
+	margin: 0 auto;
+}
+/*:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::*/
+
+/* xis17377  ini*/
+.zppm_mainView_Hide {
+	visibility: hidden !IMPORTANT;
+}
+
+.zppm_mainView_show {
+	visibility: visible !IMPORTANT;
+}
+
+.zppm_Proj_info_inside {
+	margin-left: 4%;
+	margin-top: 2%;
+}
+
+.zppm_projDetail_Descp {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.zppm_projDetail_subinfo {
+	margin-top: 5%;
+}
+
+.zppm_projDetail_Est {
+	margin-left: 4%;
+}
+
+.zppm_projDetail_Fecha {
+	margin-left: 4%;
+}
+
+/* xis17377  fin*/
+.zppm_body_main {
+	background-size: cover;
+	background-position: center center;
+	display: block;
+}
+/* ESTILOS GENERICOS DE LAS TABLAS*/
+.header-tabla {
+	font-size: 26px !important;
+	margin: 10px 3px 10px 10px;
+	font-family: "Open-sans";
+} /*CLASE NUEVA*/
+.header-tabla.negrita {
+	margin-left: 5px;
+} /*negrita clase nueva*/
+
+/*******************************************************************/
+/*              Estilos de Menu Principal:                         */
+/*-----------------------------------------------------------------*/
+/*                                                                 */
+/*                    NUEVOS ESTILOS                               */
+/*******************************************************************/
+.zppm_toolheader {
+	background: #fff;
+	max-width: 1280px;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	border-bottom: 1px solid #eee;
+}
+
+.zppm_toolheader .sapMITBTextOnly .sapMITBText {
+	overflow: visible;
+}
+
+.zppm_ToolHeader_Image .sapUiHLayoutChildWrapper {
+	vertical-align: middle;
+}
+
+.zppm_ToolHeader_Image .sapUiHLayoutChildWrapper #__image5 {
+	width: 100%;
+	height: auto;
+}
+
+/*=============================*/
+/*        CABECERA FIJA        */
+/*=============================*/
+/*AL QUITAR LA CABECERA FIJA BUSCAR ESTA REGLA EN RESPONSIVE.CSS '.zppm_Offertas_Superior, .zppm_Proy_Superior, .fondo-superior' */
+/*SOBRE LA LINEA 72 APROX  QUITAR EL MARGIN*/
+.header {
+	position: fixed;
+	width: 100%;
+	max-width: 1280px;
+	background: #fff;
+	z-index: 100;
+	border-bottom: 1px solid #eee;
+}
+
+/*******************************************************************/
+/*               Estilos de la vista:                              */
+/*-----------------------------------------------------------------*/
+/*                                                                 */
+/*                    Vista de proyectos                           */
+/*******************************************************************/
+.zppm_LT_circle_color_alto:before {
+	color: red !IMPORTANT;
+	content: url('../images/circulo-default.png');
+}
+
+.zppm_LT_circle_color_medio:before {
+	color: blue !IMPORTANT;
+	content: url('../images/circulo-azul.png');
+}
+
+.zppm_LT_circle_color_bajo:before {
+	content: url('../images/circulo-verde.png');
+}
+
+.zppm_LT_circle_color_bajo:before {
+	color: green !IMPORTANT;
+	content: url('../images/circulo-verde.png');
+}
+
+.zppm_ProjSemaforo_Estado_none:before {
+	color: transparent !IMPORTANT;
+	content: url('../images/circulo-default.png');
+}
+
+.zppm_Proj_VB_Row {
+	padding-right: 15% !IMPORTANT;
+}
+
+.zppm_LT_descrp {
+	font-size: 110% !IMPORTANT;
+	font-weight: bold !IMPORTANT;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-bottom: 8px;
+}
+
+.zppm_GAVAN_ProjectsRow {
+	width: 50% !IMPORTANT;
+	height: 50% !IMPORTANT;
+	float: right !IMPORTANT;
+	margin: 0 0 10px 10px;
+	padding-right: 10% !IMPORTANT;
+	right: 0;
+}
+
+.zppm_GAVAN_ProjectsRow:first-child {
+	width: auto !IMPORTANT;
+}
+
+.zppm_GAVAN_ProjectsRow .sapSuiteRMCNeutralTextColor {
+	width: 45px !IMPORTANT;
+	height: 45px !IMPORTANT;
+}
+
+.zppm_GAVAN_Projects {
+	width: 50% !IMPORTANT;
+	height: 50% !IMPORTANT;
+}
+
+.zppm_GAVAN_Projects:first-child {
+	width: auto !IMPORTANT;
+}
+
+.zppm_GAVAN_Projects svg {
+	width: 44px !IMPORTANT;
+	height: 44px !IMPORTANT;
+}
+
+.zppm_GAVAN_Projects_detail {
+	width: 50px !IMPORTANT;
+	height: 50px !IMPORTANT;
+}
+
+.zppm_GAVAN_Projects_detail svg {
+	width: 40px !important;
+	height: auto !important;
+}
+
+.zppm_GAVAN_Projects_detail:first-child {
+	width: auto !IMPORTANT;
+}
+
+.zppm_GAVAN_Projects_detail .sapSuiteRMCNeutralTextColor {
+	width: 33px !IMPORTANT;
+	height: 33px !IMPORTANT;
+}
+
+.zppm_Proj_Desc {
+	font-size: 14px;
+	font-weight: bold;
+	white-space: nowrap;
+}
+
+.zppm_Proj_Name_Resp {
+	font-size: 70%;
+	text-transform: uppercase;
+	margin: 8px 0;
+}
+
+.zppm_Proj_ID_Resp {
+	font-size: 70%;
+}
+
+.zppm_Proj_Fecha {
+	font-size: 70%;
+	padding-left: 5% !IMPORTANT;
+	padding-right: 5% !IMPORTANT;
+}
+
+.zppm_Proj_Riesgo {
+	font-size: 70%;
+	padding-left: 50% !IMPORTANT;
+	padding-right: 5% !IMPORTANT;
+	text-align: center !IMPORTANT;
+	size: 20px !IMPORTANT;
+}
+
+.zppm_Row_Proj:nth-child(1) {
+	width: 50% !IMPORTANT;
+}
+
+.zppm_Row_Proj.project-inf-cabecera {
+	width: 100% !important;
+}
+
+.zppm_Row_Proj.project-inf-cabecera>div {
+	vertical-align: top;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.zppm_Row_Proj.project-inf-cabecera>div:first-child+div {
+	width: 20px !important;
+	margin: 0 5px;
+}
+
+.zppm_Row_Proj.project-inf-cabecera>div:first-child+div label {
+	margin: 0 !important;
+}
+
+.zppm_ROW_Projects {
+	border-bottom-style: ridge !IMPORTANT;
+	border-bottom-width: 1px;
+	border-bottom-color: #b3b3b3;
+}
+
+.zppm_Proj_header .sapMText {
+	font-size: 10px;
+}
+
+/*******************************************************************/
+/*               Estilos de la vista:                              */
+/*-----------------------------------------------------------------*/
+/*                                                                 */
+/*                    Vista de oferta                              */
+/*******************************************************************/
+
+/* Color del semaforo del estado del detalle de una oferta en la pantalla de ofertas*/
+.zppm_stat_OffertDtl_1:before {
+	color: yellow !IMPORTANT;
+	content: url('../images/circulo-amarillo.png');
+}
+
+.zppm_stat_OffertDtl_2:before {
+	color: green !IMPORTANT;
+	content: url('../images/circulo-verde.png');
+}
+
+/*Boton de mis lineas de trabajo de la pantalla de ofertas*/
+.zppm_offertLTsBtn {
+	font-size: 80%;
+}
+
+.zppm_offertLTsBtn .sapMBtnDefault {
+	border-radius: 25px !IMPORTANT;
+	color: red;
+	background-color: #fff;
+	font-size: 80%;
+	font-weight: bold;
+}
+
+.zppm_HL_Offerts {
+	border: 2px solid #E0E0E0;
+	display: block;
+	margin: -50px auto 50px;
+	width: 1200px !IMPORTANT;
+	background: #fff;
+}
+
+/* Contenedor de filtro de ofertas de la pantalla de ofertas*/
+.zppm_Ofertas_scroll {
+	height: 400px !IMPORTANT;
+	width: 100% !IMPORTANT;
+	overflow-x: hidden !important;
+}
+
+.zppm_Offert_header .sapMText {
+	font-size: 70%;
+}
+
+.zppm_Offert_Billete {
+	width: 25px !IMPORTANT;
+	height: 20px !IMPORTANT;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.zppm_Offert_Reloj {
+	width: 25px !IMPORTANT;
+	height: 20px !IMPORTANT;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.zppm_Offert_Fecha {
+	font-size: 70%;
+	padding-top: 4px !IMPORTANT;
+}
+
+.zppm_Offert_Estado {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	font-weight: bold;
+}
+
+.zppm_Offert_Estado_verde {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	color: green !IMPORTANT;
+}
+
+.zppm_Offert_Estado_amarillo {
+	font-size: 70%;
+	padding-left: 8% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+	color: #DAA520 !IMPORTANT;
+}
+
+/* Campo de horas*/
+.zppm_Offert_Horas {
+	font-size: 70%;
+	padding-left: 10% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+}
+
+.zppm_Offert_Prep {
+	font-size: 70%;
+	padding-left: 20% !IMPORTANT;
+	padding-top: 4px !IMPORTANT;
+	padding-right: 12% !IMPORTANT;
+}
+
+.zppm_stat_Offert_1 {
+	color: red !IMPORTANT;
+}
+
+.zppm_stat_Offert_2 {
+	color: Chocolate !IMPORTANT;
+}
+
+.zppm_stat_Offert_3 {
+	color: blue !IMPORTANT;
+}
+
+.zppm_stat_Offert_4 {
+	color: green !IMPORTANT;
+}
+
+.zppm_ROW_Offerts div {
+	border: 0px !IMPORTANT;
+	overflow: hidden;
+	margin: 0 !IMPORTANT;
+	border-collapse: collapse !IMPORTANT;
+}
+
+.zppm_Offert_info {
+	border-style: none;
+	background: #f7f7f7 !IMPORTANT;
+	margin-bottom: 10px;
+}
+
+.zppm_GAVAN_ProjectsMain {
+	width: 15% !IMPORTANT;
+	height: 15% !IMPORTANT;
+}
+
+.zppm_filter .sapMITBContainerContent {
+	height: 0 !IMPORTANT;
+}
+
+.zppm_GAVAN_ProjectsMain:first-child {
+	width: auto !IMPORTANT;
+}
+
+.zppm_GAVAN_ProjectsMain .sapSuiteRMCNeutralTextColor {
+	width: 15px !IMPORTANT;
+	height: 15px !IMPORTANT;
+}
+
+.zppm_Espacio {
+	color: #ffffff !IMPORTANT;
+	width: 5% !IMPORTANT;
+}
+
+/*******************************************************************/
+/*               Estilos de la vista:                              */
+/*-----------------------------------------------------------------*/
+/*                                                                 */
+/*                    Barra de menÃºs superior                   */
+/*******************************************************************/
+.zppm_ToolHeader_Text {
+	color: #fff !IMPORTANT; /*Letras de color blanco*/
+	font-family: "Times New Roman", Times, serif;
+	/*Tipo de la fuente modificada*/
+	padding: 0 20px;
+	font-size: 26px;
+}
+
+/**/
+.zppm_filter {
+	margin: 0;
+}
+
+/* Marca el estilo del tÃ­tulo de las opciones de la barra de menÃºs */
+.sapMITBTextOnly .sapMITBFilterDefault.sapMITBSelected>.sapMITBText {
+	color: #000000; /*Color negro de las letras*/
+	font-weight: bold; /*Negrita*/
+}
+
+/* Marca el estilo del borde inferior de las opciones de la barra de menÃºs */
+.sapMITBSelected>.sapMITBContentArrow {
+	border-bottom-color: #cc1919; /*Color rojo del borde*/
+}
+
+/* Afecta a los numeros que marcan totales en la barra de menÃºs */
+.sapMITBTextOnly .sapMITBFilter .sapMITBCount {
+	color: #ffffff;
+	max-width: none;
+	text-overflow: ellipsis;
+	border-style: hidden;
+	background-color: red;
+	padding-left: 2px;
+	padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	float: right;
+	border-radius: 25px;
+	position: relative;
+	right: -15px;
+	top: 5px;
+	font-size: 13px !important;
+}
+
+#__xmlview6--inicioHeader-tab span {
+	background-color: white !IMPORTANT;
+}
+
+* /*******************************************************************/
+	/*               Estilos de la vista:                              */
+	/*-----------------------------------------------------------------*/
+	/*                                                                 */
+	/*           Contenedor de ofertas en la pantalla principal        */
+	/*******************************************************************/ 
+
+.zppm_ProjSemaforo_Estado_rojo:before {
+	color: red !IMPORTANT;
+	content: url('../images/circulo-rojo.png');
+}
+
+.zppm_ProjSemaforo_Estado_amarillo:before {
+	color: yellow !IMPORTANT;
+	content: url('../images/circulo-amarillo.png');
+}
+
+.zppm_ProjSemaforo_Estado_verde:before {
+	color: green !IMPORTANT;
+	content: url('../images/circulo-verde.png');
+}
+
+/* "Mis" del cuadro de proyectos del inicio*/
+.misProjInicio {
+	font-family: "Open Sans";
+	color: #4a4a4a;
+	width: 100% !IMPORTANT;
+}
+
+/* "Proyectos" del cuadro de proyectos del inicio*/
+.proyectosProjInicio {
+	font-family: "Open Sans Semibold";
+	color: #4a4a4a;
+	width: 100%;
+	font-weight: bold !IMPORTANT;
+}
+
+/* "Mis" del cuadro de ofertas del inicio*/
+.misOffertInicio {
+	color: #4a4a4a;
+	width: 100% !IMPORTANT;
+	font-size: 1.075rem;
+}
+
+/* "Ofertas" del cuadro de proyectos del inicio*/
+.ofertasOffertInicio {
+	color: #4a4a4a;
+	font-weight: bold !IMPORTANT;
+	font-size: 1.175rem;
+}
+
+/*Boton de Mis lineas de trabajo de mis ofertas en el inicio*/
+.zppm_offertInicioLTs {
+	float: right !IMPORTANT;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.zppm_offertInicioLTs .sapMBtnDefault {
+	border-radius: 25px !IMPORTANT;
+	color: #ec0000;
+	background: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-shadow: unset;
+}
+/*Boton de Mis lineas de trabajo de mis proyectos en el inicio*/
+.zppm_projInicioLTs {
+	float: right !IMPORTANT;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+.zppm_projInicioLTs .sapMBtnDefault {
+	border-radius: 25px !IMPORTANT;
+	color: #ec0000;
+	background: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/*TamaÃ±o de la letra tanto de proyectos como de ofertas en la pantalla de inicio*/
+.zppm_ROW_OffertsMain .sapMLabel {
+	font-size: 16px;
+}
+
+/* Lineas de las ofertas de la pantalla de inicio*/
+.zppm_ROW_Offerts .zppm_HBox {
+	margin-top: 8px !IMPORTANT;
+}
+
+.zppm_HBox {
+	margin: 0% !IMPORTANT;
+	padding: 0% !IMPORTANT;
+}
+
+.zppm_labelOferta_EST { /*Camppo del estado */
+	color: blue;
+	font-weight: bold;
+}
+
+.zppm_labelOferta_EST_verde {
+	color: green !IMPORTANT;
+}
+
+.zppm_labelOferta_EST_amarillo {
+	color: #DAA520 !IMPORTANT;
+}
+
+.inicioContainer {
+	width: 100%;
+	max-width: 1200px !IMPORTANT;
+	background: #fff;
+	border: 1px solid #E0E0E0;
+	margin: -50px auto 50px;
+}
+
+/**/
+.zppm_CG_OffertsMain, .zppm_CG_ProjectsMain {
+	border: 2px solid #E0E0E0;
+	background: #f7f7f7 !IMPORTANT;
+	width: 100% !IMPORTANT;
+}
+
+.zppm_CG_Proyects {
+	border: 2px solid #E0E0E0;
+	background: #f7f7f7 !IMPORTANT;
+	max-width: 410px;
+	margin: 25px 50px !important;
+	min-width: 383px;
+	display: block;
+	width: 90%;
+}
+
+/**/
+.zppm_VL_OffertsMain {
+	width: 100% !IMPORTANT;
+}
+
+/**/
+.zppm_HL1_OffertsMain {
+	width: 100% !IMPORTANT;
+	padding-bottom: 10px;
+}
+
+/**/
+.zppm_HL2_OffertsMain {
+	width: 100% !IMPORTANT;
+}
+
+.zppm_HL3_OffertsMain {
+	width: 100% !IMPORTANT;
+}
+
+.zppm_SC_OffertsMain {
+	height: 399px !IMPORTANT;
+}
+
+.zppm_HL_Proyects {
+	border: 2px solid #E0E0E0;
+	width: 1200px !IMPORTANT;
+	display: block;
+	background: #fff;
+	margin: -50px auto 50px;
+	position: relative;
+}
+
+.zppm_aux .sapMFlexBoxAlignContentStretch {
+	width: 95% !IMPORTANT;
+}
+/*FIN PROYECTOS HOME*/
+/* Aplicado para que el scroll container cubra el 100% de ancho del contenedor
+     y no se vean lineas que no ocupan toda la anchura posible */
+.zppm_HL3_OffertsMain .sapUiHLayoutChildWrapper {
+	width: 100%;
+}
+
+.zppm_labelOferta_Desc {
+	padding-top: 4px;
+	padding-right: 7px;
+	font-weight: bold;
+	white-space: initial;
+}
+
+.zppm_labelProyecto_Desc {
+	padding-top: 4px;
+	padding-left: 7px;
+	padding-right: 7px;
+	font-weight: bold;
+}
+
+.zppm_labelOferta_EID {
+	font-size: 14px;
+}
+
+.zppm_labelProyecto_EID {
+	padding-top: 4px;
+	padding-left: 7px;
+}
+
+.zppm_labelOferta_SPT {
+	text-align: center !important;
+}
+
+.zppm_RelojIsban {
+	width: 25px !IMPORTANT;
+	height: 20px !IMPORTANT;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.zppm_labelOferta_REJ {
+	padding-left: 25px;
+	background: url('../images/RelojIsban2.png') no-repeat -5px top;
+	background-size: 30px auto;
+	display: block;
+	text-overflow: ellipsis;
+}
+
+.zppm_BilleteIsban {
+	width: 25px !IMPORTANT;
+	height: 20px !IMPORTANT;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.zppm_labelOferta_PRS {
+	padding-left: 30px;
+	padding-right: 7px;
+	background: url('../images/BilleteIsban2.png') no-repeat left top;
+	background-size: 30px auto;
+	display: block;
+	text-aling: right !important;
+}
+
+.zppm_labelOferta_MND {
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.sapUiGlobalBackgroundColor {
+	background: none !important;
+}
+
+.zppm_VBox {
+	background: #b3b3ff !important;
+}
+
+.zppm_LeftPanelBodyMain {
+	width: 500px !IMPORTANT;
+	height: 470px !IMPORTANT;
+	border-style: groove !IMPORTANT;
+}
+
+.zppm_MainClass {
+	color: blue !IMPORTANT;
+}
+
+/*******************************************************************/
+/*               Estilos de la vista: TOOLHEADERVIEW               */
+/*******************************************************************/
+
+/* Estilo aplicado a la cabecera general */
+.zppm_ToolHeader_c0 {
+	width: 100%;
+}
+
+/* Estilo aplicado a la cabecera izquierda */
+.zppm_ToolHeader_c1 {
+	color: black !important;
+	background: #E60000 !important;
+	width: 400px;
+	height: 60px !important;
+}
+
+/* Estilo aplicado a la cabecera derecha */
+.zppm_ToolHeader_c2 {
+	float: right;
+	height: 60px !important;
+	background: #FFFFFF !important;
+}
+
+.zppm_ToolHeaderClass {
+	background: #FFFFFF !important;
+}
+
+.zppm_ToolHeader_LeftSep {
+	width: 20px;
+	background: #E60000 !important;
+	height: 100% !important;
+}
+
+.zppm_ToolHeader_Image {
+	background: #EC0000;
+	padding: 0px 35px;
+	width: auto !important;
+}
+
+.header {
+	display: block;
+}
+
+.zppm_genericLayout {
+	width: 80% !important;
+}
+
+.myCustomTile:hover {
+	border-color: #1A1A1A !important;
+}

@@ -1,0 +1,19 @@
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified">
+	<u:Menu>
+		<u:MenuItem text="{i18n>gantt}" select="handleMenuItemPressLT"
+			icon="sap-icon://business-objects-mobile" />
+		<u:MenuItem text="{i18n>riesgos}" select="handleMenuItemPressLT"
+			icon="sap-icon://warning" />
+		<u:MenuItem text="{i18n>recursos}" select="handleMenuItemPressLT"
+			icon="sap-icon://group" />
+		<!--<u:MenuItem text="{i18n>exprt}" select="handleMenuItemPress" icon="sap-icon://action"/> -->
+		<!--<u:MenuItem text="My 3rd Item"> <u:Menu> <u:MenuItem text="1st Sub 
+			Item" select="handleMenuItemPress" /> <u:MenuItem text="2nd Sub Item" select="handleMenuItemPress" 
+			/> <u:MenuItem text="3rd Sub Item but inactive" enabled="false" /> </u:Menu> 
+			</u:MenuItem> -->
+		<!--<u:MenuTextFieldItem label="Find" enabled="true" startsSection="true" 
+			icon="sap-icon://filter" select="handleTextFieldItemPress" /> -->
+	</u:Menu>
+
+</core:FragmentDefinition>

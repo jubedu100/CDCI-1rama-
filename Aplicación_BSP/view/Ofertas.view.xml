@@ -1,0 +1,206 @@
+<mvc:View controllerName="ZPPM_APP_VOD10.controller.Ofertas"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m"
+	xmlns:semantic="sap.m.semantic" xmlns:table="sap.ui.table">
+
+	<l:HorizontalLayout class="zppm_Offertas_Superior">
+		<Text text="{i18n>misofertas}" class="fondo-superior"></Text>
+		<Button id="btn_LTs" class="zppm_offertLTsBtn zppm_button"
+			text="{i18n>mislts}" press="onMisLTS_offerts"></Button>
+	</l:HorizontalLayout>
+
+	<VBox class="HL_Offerts_Sup">
+		<l:HorizontalLayout id="ofertasGnrlContainer"
+			class="zppm_HL_Offerts">
+			<VBox class="sapUiSmallMargin zppm_CG_Offerts">
+
+				<!-- Filtro de ofertas -->
+
+				<!--<ComboBox id="ComboOfer" selectionChange="handleSelectionChange" 
+					selectionFinish="handleSelectionFinish" width="200px" showSecondaryValues= 
+					"true"> </ComboBox> -->
+
+				<!--<Table id="offertFilterTT" selectionMode="Single" selectionBehavior="RowOnly" 
+					visibleRowCount="7" enableSelectAll="false" items="{path: 'OfertaOD>/OfertaSet'}" 
+					updateFinished="onUpdateFinishedOfferts" rowSelectionChange="onSelectionChange"> 
+					<columns> <Column width="35%"> <Text text="header"/> </Column> </columns> 
+					<items> <ColumnListItem> <cells> <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"> 
+					<HBox class="fila-superior"> <Label text="{OfertaOD>Externalid}" class="zppm_labelOferta_EID"/> 
+					</HBox> <HBox class="fila-superior"> <Label text="{OfertaOD>Descrp}" class="zppm_labelOferta_Desc"/> 
+					</HBox> <HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom zppm_HBox 
+					subfila"> <Label text="{OfertaOD>Fecha}" class="zppm_Offert_Fecha"/> <Label 
+					text="{OfertaOD>Estado}" class="zppm_Offert_Estado"/> <Label text="{OfertaOD>Horas}" 
+					class="zppm_labelOferta_REJ"/> <Label text="{OfertaOD>Presupuesto}" class="zppm_labelOferta_PRS"/> 
+					</HBox> </VBox> </cells> </ColumnListItem> </items> </Table> -->
+
+				<!--<table:Table id="offertFilterTT" table:selectionMode="Single" table:selectionBehavior="RowOnly" 
+					visibleRowCount="4" rows="{path: 'OfertaOD>/OfertaSet'}" updateFinished="onUpdateFinishedOfferts" 
+					rowSelectionChange="onSelectionChange"> <table:title></table:title> <table:columns> 
+					<table:Column> <table:template> <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"> 
+					<HBox class="fila-superior"> <Label text="{OfertaOD>Externalid}" class="zppm_labelOferta_EID"/> 
+					</HBox> <HBox class="fila-superior"> <Label text="{OfertaOD>Descrp}" class="zppm_labelOferta_Desc"/> 
+					</HBox> <HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom zppm_HBox 
+					subfila"> <Label text="{OfertaOD>Fecha}" class="zppm_Offert_Fecha"/> <Label 
+					text="{OfertaOD>Estado}" class="zppm_Offert_Estado"/> <Label text="{OfertaOD>Horas}" 
+					class="zppm_labelOferta_REJ"/> <Label text="{OfertaOD>Presupuesto}" class="zppm_labelOferta_PRS"/> 
+					</HBox> </VBox> </table:template> </table:Column> </table:columns> </table:Table> -->
+
+
+				<!-- Tabla de ofertas -->
+
+				<!--<table:Table id="offertFilter" table:selectionMode="Single" table:selectionBehavior="RowOnly" 
+					visibleRowCount="4" rows="{path: 'OfertaOD>/OfertaSet'}" rowSelectionChange="onSelectionChange"> 
+					<table:title></table:title> <table:columns> <table:Column> <table:template> 
+					<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom"> <HBox class="fila-superior"> 
+					<Label text="{OfertaOD>Externalid}" class="zppm_labelOferta_EID"/> </HBox> 
+					<HBox class="fila-superior"> <Label text="{OfertaOD>Descrp}" class="zppm_labelOferta_Desc"/> 
+					</HBox> <HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom zppm_HBox 
+					subfila"> <Label text="{OfertaOD>Fecha}" class="zppm_Offert_Fecha"/> <Label 
+					text="{OfertaOD>Estado}" class="zppm_Offert_Estado"/> <Label text="{OfertaOD>Horas}" 
+					class="zppm_labelOferta_REJ"/> <Label text="{OfertaOD>Presupuesto}" class="zppm_labelOferta_PRS"/> 
+					</HBox> </VBox> </table:template> </table:Column> </table:columns> </table:Table> -->
+
+				<!-- Listado de ofertas -->
+
+				<ScrollContainer id="offertFilterScroll" horizontal="true"
+					vertical="true" focusable="false" class="zppm_Ofertas_scroll">
+					<content>
+
+						<List id="offertFilter" mode="SingleSelectMaster" items="{path: 'OfertaOD>/OfertaSet'}"
+							updateFinished="onUpdateFinishedOfferts" selectionChange="onSelectionChange">
+							<CustomListItem class="zppm_ROW_Offerts">
+								<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+
+									<HBox class="fila-superior">
+										<Label text="{OfertaOD>Externalid}" class="zppm_labelOferta_EID" />
+									</HBox>
+
+									<HBox class="fila-superior">
+										<Label text="{OfertaOD>Descrp}" class="zppm_labelOferta_Desc" />
+									</HBox>
+
+									<HBox
+										class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom zppm_HBox subfila">
+										<Label text="{OfertaOD>Fecha}" class="zppm_Offert_Fecha" />
+										<Label text="{OfertaOD>Estado}" class="zppm_Offert_Estado" />
+										<Label text="{OfertaOD>Horas}" class="zppm_labelOferta_REJ" />
+										<Label text="{OfertaOD>Presupuesto}" class="zppm_labelOferta_PRS" />
+									</HBox>
+								</VBox>
+							</CustomListItem>
+						</List>
+					</content>
+				</ScrollContainer>
+			</VBox>
+			<VBox class="wrapper-detalle-oferta">
+
+				<!-- Informacion de la oferta seleccionada -->
+				<HBox id="detalleOfer" class="zppm_Offert_info">
+					<VBox class="zppm_Offert_info_inside">
+						<HBox>
+							<Label id="offertDetail_Descp" class="offertDetail_Descp"></Label>
+							<Label id="offertDetail_pte_cliente" class="offertDetail_pte_cliente"></Label>
+						</HBox>
+						<Label id="offertDetail_exteranl_id" class="offertDetail_exteranl_id"></Label>
+						<HBox class="zppm_offertDetail_subinfo">
+							<VBox>
+								<Label id="offertDetail_RespNA"></Label>
+								<Label id="offertDetail_RespID"></Label>
+							</VBox>
+							<!--<VBox> <Label id="offertDetail_Semf" text="dibj"></Label> <Label 
+								id="offertDetail_Est"></Label> </VBox> -->
+
+							<!-- Detalle de una oferta: SEMAFORO de Estado y ESTADO -->
+							<VBox>
+								<core:Icon id="offertDetail_Semf" src="sap-icon://circle-task-2"
+									class="zppm_stat_OffertDtl_1" color="#031E48">
+									<core:layoutData>
+										<FlexItemData growFactor="1" />
+									</core:layoutData>
+								</core:Icon>
+								<Label id="offertDetail_Est"></Label>
+							</VBox>
+
+							<!-- Detalle de una oferta: CALENDARIO y FECHA -->
+							<VBox>
+								<core:Icon id="offertDetail_Cal" src="sap-icon://appointment-2"
+									class="size1 zppm_right_arrow_OffertsMain" color="#cc1919">
+								</core:Icon>
+								<Label id="offertDetail_Fecha"></Label>
+							</VBox>
+
+							<!-- Detalle de una oferta: RELOJ y HORAS -->
+							<VBox>
+								<Image id="offertDetail_Relj" src="./assets/images/RelojIsban2.png"
+									class="zppm_RelojIsban"></Image>
+								<Label id="offertDetail_Horas"></Label>
+							</VBox>
+
+							<!-- Detalle de una oferta: BILLETE y PRESUPUESTO -->
+							<VBox>
+								<Image id="offertDetail_Bille" src="./assets/images/BilleteIsban2.png"
+									class="zppm_BilleteIsban"></Image>
+								<Label id="offertDetail_Presup"></Label>
+							</VBox>
+
+							<!-- Boton de detalle de una oferta -->
+							<Button id="offertDetail_Btn" icon="sap-icon://vertical-grip"
+								class="zppm_offertDetail_Btn" press="handleMessagePopoverOffertInfo">
+							</Button>
+						</HBox>
+					</VBox>
+				</HBox>
+				<Table id="idLinTbjTable" inset="false"
+					items="{ path: 'LinTbjOD>/LinTbjSet', sorter: { path: 'ExternalidProj' } }"
+					class="zppm_Offert_header contenido-tabla" updateFinished="onUpdateLTs">
+					<columns>
+						<Column width="35%">
+							<Text text="{i18n>Descrp}" />
+						</Column>
+						<Column width="10%">
+							<Text text=" " />
+						</Column>
+						<Column width="15%">
+							<Text text="{i18n>stat}" />
+						</Column>
+						<Column width="10%">
+							<Text text="{i18n>ffin}" />
+						</Column>
+						<Column width="10%">
+							<Text text="{i18n>horas}" />
+						</Column>
+						<Column width="15%">
+							<Text text="{i18n>prep}" />
+						</Column>
+						<!--<Column width="3%"> <Text id="zppm_Offert_hedBtn"></Text> </Column> -->
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<VBox>
+									<Text text="{LinTbjOD>Descrp}" class="zppm_LT_descrp" />
+									<HBox class="datos-responsable">
+										<Text text="{LinTbjOD>RespName}" class="name_resp" />
+										<Text text="{LinTbjOD>Ceco}" class="id_resp" />
+									</HBox>
+								</VBox>
+								<!--<core:HTML content='&lt;a href=&quot;sip:jnuevoca@extern.isban.com&quot;&gt;&lt;span 
+									style=&quot;color:blue&quot;&gt;&lt;img src=&quot;./assets/images/link.png&quot; 
+									width=&quot;25&quot; height=&quot;20&quot; border=&quot;0&quot;&gt; &lt;/span&gt;&lt;/a&gt;'></core:HTML> -->
+								<core:HTML content="{LinTbjOD>Link}"></core:HTML>
+
+								<Text text="{LinTbjOD>Status}" id="LinTbj_status" />
+								<Text text="{LinTbjOD>Fecha}" visible="true" />
+								<Text text="{LinTbjOD>Horas}" />
+								<Text text="{LinTbjOD>Prep} {LinTbjOD>Curr}" />
+								<!--<Button icon="sap-icon://menu2" press="handleMessagePopoverOffertLT" 
+									class="vertical-button"></Button> -->
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</l:HorizontalLayout>
+	</VBox>
+
+</mvc:View>

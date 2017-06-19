@@ -1,0 +1,32 @@
+<mvc:View controllerName="ZPPM_APP_VOD10.controller.ToolHeaderView"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:tnt="sap.tnt" xmlns:l="sap.ui.layout">
+
+
+
+	<l:HorizontalLayout class="header">
+
+
+		<l:HorizontalLayout class="zppm_ToolHeader_Image">
+			<Image src="./assets/images/Santander_header.png"></Image>
+			<Text text="{i18n>respproy}" class="zppm_ToolHeader_Text"></Text>
+		</l:HorizontalLayout>
+
+
+		<IconTabBar id="idIconTabBarFiori2" upperCase="true"
+			class="sapUiResponsiveContentPadding zppm_filter" select="handleIconTabBarSelect"
+			applyContentPadding="false" expand="false">
+			<items>
+				<IconTabFilter id="inicioHeader" text="{i18n>inicio}"
+					press="pathtoinicio" key="BTNMenuInicio" tabindex="0">
+				</IconTabFilter>
+				<IconTabFilter id="offertHeader" text="{i18n>ofertas}"
+					press="onPathToOferts" key="BTNMenuOferts"></IconTabFilter>
+				<IconTabFilter id="proyHeader" text="{i18n>proyectos}"
+					press="pathtoproyecs" key="BTNMenuProjects"></IconTabFilter>
+				<IconTabFilter id="ltHeader" text="{i18n>mislts}"
+					press="pathtolts" key="BTNMenuLTs"></IconTabFilter>
+			</items>
+		</IconTabBar>
+
+	</l:HorizontalLayout>
+</mvc:View>

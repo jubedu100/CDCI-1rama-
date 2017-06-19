@@ -1,0 +1,144 @@
+{
+	"_version": "1.0.0",
+	"start_url": "index.html",
+	"sap.app": {
+		"id": "ZPPM_APP_VOD10",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"MainServiceRemote": {
+				"uri": "http://spbdp6.isban.dev.corp:8001/sap/opu/odata/SAP/ZPPM_PANEL_V01_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"disableHeadRequestForToken": true
+				}
+			}
+		},
+		"sourceTemplate": {
+			
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": false,
+			"tablet": false,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "ZPPM_APP_VOD10.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.38.11",
+			"libs": {
+				"sap.m": {
+					"minVersion": "1.38.11"
+				},
+				"sap.ui.core": {
+					"minVersion": "1.38.11"
+				},
+				"sap.ui.layout": {
+					"minVersion": "1.38.11"
+				},
+				"sap.ui.unified": {
+					"minVersion": "1.38.11"
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": false,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "ZPPM_APP_VOD10.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "assets/css/style.css"
+				},
+				{
+					"uri": "assets/css/responsive.css"
+				},
+				{
+					"uri": "assets/css/style2.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "ZPPM_APP_VOD10.view",
+				"controlId": "innerApp",
+				"controlAggregation": "pages",
+				"transition": "show",
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": [
+						"",
+						"home"
+					],
+					"name": "home",
+					"target": "home"
+				},
+				{
+					"pattern": "ofertas",
+					"name": "ofertas",
+					"target": "ofertas"
+				},
+				{
+					"pattern": "proyectos",
+					"name": "proyectos",
+					"target": "proyectos"
+				},
+				{
+					"pattern": "lts",
+					"name": "lts",
+					"target": "lts"
+				}
+			],
+			"targets": {
+				"home": {
+					"viewName": "BodyMainView"
+				},
+				"ofertas": {
+					"viewName": "Ofertas"
+				},
+				"proyectos": {
+					"viewName": "Proyectos"
+				},
+				"lts": {
+					"viewName": "Lts"
+				}
+			}
+		}
+	}
+}
