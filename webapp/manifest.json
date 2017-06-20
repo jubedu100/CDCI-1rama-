@@ -16,7 +16,6 @@
 		"dataSources": {
 			"Z001_VUELOS_PRUEBA_SRV": {
 				"uri": "/sflight/sap/opu/odata/sap/Z001_VUELOS_PRUEBA_SRV/",
-				
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",

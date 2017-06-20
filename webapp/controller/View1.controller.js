@@ -47,9 +47,9 @@ sap.ui.define([
 
 			this.getView().byId("hora").setText(hh + ":" + MM + ":" + ss);
 
-			setInterval(function() {
+			/*setInterval(function() {
 				that.onAfterRendering();
-			}, 500);
+			}, 1000);*/
 
 		},
 
@@ -225,48 +225,75 @@ sap.ui.define([
 		},
 
 		download: function() {
-			var oView = this.getView();
-			/*oCurrentColumn.setSorted(true);*/
 
-			var oTable = oView.byId("Vuelos");
-			/*var oSelectedItem = sap.ui.getCore().byId("Vuelos").getSelectedItems();*/
-			var oSelectedItem = oTable.getBinding("rows");
-			/*			var item1 = oSelectedItem[0];
-						var cells = item1.getCells();*/
-			/*			console.log(cells);
-						var oPname = cells[0].getText();
-						var oDescription = cells[1].getText();
-						var oRating = cells[2].getValue();
-			*/
+			function loadFile(url, callback) {
+				JSZipUtils.getBinaryContent(url, callback);
+			}
+			//cargamos el archivo a modificar
+			//-----------importante---------
+			//el archivo debe estar comprimido en .zip
 
-			/*var docx = new DOCXjs();*/
-/*			var JSZip = require('jszip');*/
-/*var Docxtemplater = require('docxtemplater');*/
-/*var fs = require('fs');
-var path = require('path');*/
-//Load the docx file as a binary
-/*var content = fs
-.readFileSync(path.resolve(__dirname, 'input.docx'), 'binary');
-var zip = new JSZip(content);*/
+			loadFile("controller/librerias/input/input.docx", function(error, content) {
+				if (error) {
+					throw error
+				};
+				var zip = new JSZip(content);
+				var doc = new Docxtemplater().loadZip(zip)
 
-			var doc = new DOCXjs();
-			/*var doc = new Docxgen();*/
-			/*var doc = new Docxtemplater();*/
-			/*			var doc = new jsPDF();*/
+				//definimos las variables a modificar
+				doc.setData({
+					first_name: 'John',
+					last_name: 'Doe',
+					phone: '0652455478',
+					description: 'New Website'
+				});
 
-			/*		doc.setFontSize(30);
-						doc.text(50, 35, 'Products Detail ');*/
+				try {
+					// render the document (replace all occurences of {first_name} by John, {last_name} by Doe, ...)
+					doc.render()
+				} catch (error) {
+					var e = {
+						message: error.message,
+						name: error.name,
+						stack: error.stack,
+						properties: error.properties,
+					}
+					console.log(JSON.stringify({
+						error: e
+					}));
+					// The error thrown here contains additional information when logged with JSON.stringify (it contains a property object).
+					throw error;
+				}
 
-			/*		doc.setFontSize(14);
-				doc.text(20, 60, 'Product Name: ' );
-				doc.setFontSize(14);
-				doc.text(20, 80, 'Description: ');
-				doc.setFontSize(14);
-				doc.text(20, 100, 'Rating: ');*/
+				var out = doc.getZip().generate({
+						type: "blob",
+						mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+					}) //Output the document using Data-URI
 
-			/*			doc.save('orderList.pdf');*/
-						doc.output('orderList.docx');
+				//descargarmos el archivo
+				saveAs(out, "output.docx")
+			})
+		},
+
+		guardar: function() {
+			var oTable = this.getView().byId("Vuelos");
+			var oBinding = oTable.getBinding("rows");
+			var oModel = oBinding.getModel();
+			var mNewEntry = {};
+
+			mNewEntry.Carrid = $("#__xmlview0--Carrid-inner").val();
+			mNewEntry.Connid = $("#__xmlview0--Connid-inner").val();
+			var oParameters = {
+				"Carrid": mNewEntry.Carrid,
+				"Connid": mNewEntry.Connid
+					/*                        "lastname" : "b",
+					                        "firstname" : "c",*/
+			};
+			/*mNewEntry.Carrid = sap.ui.getCore().byId("#__xmlview0--Carrid").getValue();*/
+
+			oModel.create("/FLIGHTSet", oParameters);
 
 		}
+
 	});
 });
