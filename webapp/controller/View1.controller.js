@@ -293,6 +293,11 @@ sap.ui.define([
 
 			oModel.create("/FLIGHTSet", oParameters);
 
+		},
+		onPress: function (oEvent) {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.navTo("view2");
+			
 		}
 
 	});

@@ -49,7 +49,7 @@ sap.ui.define([
 /*			var oTable = sap.ui.getCore("Vuelos");*/
 			/*oTable.setVisibleRowCount(10);*/
 			
-			
+			this.getRouter().initialize();
 				 
 			
 		}

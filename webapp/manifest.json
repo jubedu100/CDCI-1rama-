@@ -83,13 +83,42 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
+			"css": [{
+				"uri": "css/style.css"
+			}]
+
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "CDCI1.view",
+				"controlId": "innerApp",
+				"controlAggregation": "pages"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "View1",
+				"target": "View1"
+			},
+			{
+				"pattern": "view2",
+				"name": "view2",
+				"target": "view2"
+			}
+			],
+			"targets": {
+				"View1": {
+					"viewName": "View1"
+
+				},
+				"view2": {
+					"viewName": "view2"
 				}
-			]
+			}
 		}
 	},
+
 	"sap.platform.hcp": {
 		"uri": "webapp",
 		"_version": "1.1.0"

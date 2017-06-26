@@ -2,6 +2,7 @@
 	xmlns:layout="sap.ui.layout" xmlns="sap.m"  xmlns:t="sap.ui.table" xmlns:form="sap.ui.layout.form">
 <!--	<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" toggleHeaderOnTitleClick="{/titleClickable}">-->
 		<!-- DynamicPage Title -->
+		<App id="innerApp">
 		<VBox fitContainer="true">
 		<NavContainer>
 		
@@ -164,7 +165,7 @@
 					<ToggleButton id="btn1" press="busqueda_avanzada" type="Transparent" pressed="ocultar_busqueda_avanzada" text="Búsqueda avanzada"/>
 					<ToggleButton text="Actualizar" class="btn"/>
 					<ToggleButton text="Aplicar" class="btn"/>
-					<ToggleButton text="Crear" class="btn" press="download"/>
+					<ToggleButton text="Crear" class="btn" press="onPress"/>
 <!--				</f:content>
 				<f:content>-->
 				</layout:VerticalLayout>
@@ -292,4 +293,5 @@
 			</t:Table>
 <!--		</f:content>-->
 	</VBox>
+	</App>
 </mvc:View>
