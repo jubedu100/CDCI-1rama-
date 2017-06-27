@@ -10,9 +10,8 @@
 		vertical="true"
 		focusable="true">	
 		<VBox fitContainer="true">
-			
-    <NavContainer> 
-	
+		<NavContainer>
+		
 <!--			<f:DynamicPageTitle>
 				<f:heading>
 					<Text text="TITULO: {i18n>appTitle} - {i18n>area} - {i18n>sociedad}" class="GrisGrand"/>

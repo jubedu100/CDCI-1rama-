@@ -233,7 +233,7 @@ sap.ui.define([
 			//-----------importante---------
 			//el archivo debe estar comprimido en .zip
 
-			loadFile("controller/librerias/input/input.docx", function(error, content) {
+			loadFile("libs/input/input.docx", function(error, content) {
 				if (error) {
 					throw error
 				};

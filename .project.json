@@ -7,7 +7,7 @@
     "targetFolder": "dist",
     "sourceFolder": "webapp",
     "buildRequired": true,
-    "lastBuildDateTime": "Wed, 14 Jun 2017 10:46:07 GMT"
+    "lastBuildDateTime": "Tue, 27 Jun 2017 08:05:00 GMT"
   },
   "generation": [
     {
@@ -60,7 +60,7 @@
   "hcpdeploy": {
     "account": "p1942403512trial",
     "name": "cdci2",
-    "lastVersionWeTriedToDeploy": "1.0.10"
+    "lastVersionWeTriedToDeploy": "1.0.28"
   },
   "deploy": {
     "destination": "sflight",
