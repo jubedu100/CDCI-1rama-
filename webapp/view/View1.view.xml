@@ -3,9 +3,16 @@
 <!--	<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" toggleHeaderOnTitleClick="{/titleClickable}">-->
 		<!-- DynamicPage Title -->
 		<App id="innerApp">
+		<ScrollContainer
+		height="100%"
+		width="100%"
+		horizontal="true"
+		vertical="true"
+		focusable="true">	
 		<VBox fitContainer="true">
-		<NavContainer>
-		
+			
+    <NavContainer> 
+	
 <!--			<f:DynamicPageTitle>
 				<f:heading>
 					<Text text="TITULO: {i18n>appTitle} - {i18n>area} - {i18n>sociedad}" class="GrisGrand"/>
@@ -293,5 +300,7 @@
 			</t:Table>
 <!--		</f:content>-->
 	</VBox>
+	</ScrollContainer>
 	</App>
+	
 </mvc:View>
