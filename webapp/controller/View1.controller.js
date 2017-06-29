@@ -233,7 +233,8 @@ sap.ui.define([
 			//-----------importante---------
 			//el archivo debe estar comprimido en .zip
 
-			loadFile("libs/input/input.docx", function(error, content) {
+			/*loadFile("libs/input/input.docx", function(error, content) {*/
+			loadFile("https://webidetesting7477881-p1942403512trial.dispatcher.hanatrial.ondemand.com/webapp/libs/input/input.docx", function(error, content) {
 				if (error) {
 					throw error
 				};
@@ -271,7 +272,7 @@ sap.ui.define([
 					}) //Output the document using Data-URI
 
 				//descargarmos el archivo
-				saveAs(out, "output.docx")
+				saveAs(out, "output.docx");
 			})
 		},
 
