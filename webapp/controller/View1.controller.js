@@ -275,25 +275,7 @@ sap.ui.define([
 			})
 		},
 
-		guardar: function() {
-			var oTable = this.getView().byId("Vuelos");
-			var oBinding = oTable.getBinding("rows");
-			var oModel = oBinding.getModel();
-			var mNewEntry = {};
 
-			mNewEntry.Carrid = $("#__xmlview0--Carrid-inner").val();
-			mNewEntry.Connid = $("#__xmlview0--Connid-inner").val();
-			var oParameters = {
-				"Carrid": mNewEntry.Carrid,
-				"Connid": mNewEntry.Connid
-					/*                        "lastname" : "b",
-					                        "firstname" : "c",*/
-			};
-			/*mNewEntry.Carrid = sap.ui.getCore().byId("#__xmlview0--Carrid").getValue();*/
-
-			oModel.create("/FLIGHTSet", oParameters);
-
-		},
 		onPress: function (oEvent) {
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 			oRouter.navTo("view2");

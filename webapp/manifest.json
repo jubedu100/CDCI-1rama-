@@ -83,30 +83,10 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			],
-			"js": [
-				{
-					"uri": "libs/docxtemplater_latest.js"
-				},
-				{
-					"uri": "libs/jszip_utils.js"
-				},
-				{
-					"uri": "libs/jszip.js"
-				},
-				{
-					"uri": "libs/file_saver.min.js"
-				}
-			],
-			"docx": [
-				{
-					"uri": "libs/input/input.docx"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
+
 		},
 		"routing": {
 			"config": {
@@ -116,21 +96,21 @@
 				"controlId": "innerApp",
 				"controlAggregation": "pages"
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "View1",
-					"target": "View1"
-				},
-				{
-					"pattern": "view2",
-					"name": "view2",
-					"target": "view2"
-				}
+			"routes": [{
+				"pattern": "",
+				"name": "View1",
+				"target": "View1"
+			},
+			{
+				"pattern": "view2",
+				"name": "view2",
+				"target": "view2"
+			}
 			],
 			"targets": {
 				"View1": {
 					"viewName": "View1"
+
 				},
 				"view2": {
 					"viewName": "view2"
@@ -138,6 +118,7 @@
 			}
 		}
 	},
+
 	"sap.platform.hcp": {
 		"uri": "webapp",
 		"_version": "1.1.0"

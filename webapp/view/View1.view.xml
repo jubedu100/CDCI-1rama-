@@ -4,14 +4,16 @@
 		<!-- DynamicPage Title -->
 		<App id="innerApp">
 		<ScrollContainer
-		height="100%"
+        height="100%"
 		width="100%"
 		horizontal="true"
 		vertical="true"
-		focusable="true">	
+		>	
+		<!--focusable="true"-->
 		<VBox fitContainer="true">
-		<NavContainer>
-		
+			
+    <NavContainer class="principal"> 
+	
 <!--			<f:DynamicPageTitle>
 				<f:heading>
 					<Text text="TITULO: {i18n>appTitle} - {i18n>area} - {i18n>sociedad}" class="GrisGrand"/>
@@ -46,6 +48,8 @@
 				<layout:VerticalLayout>
 					<!--Linea 1-->
 					<layout:VerticalLayout width="100%" class="imagen_tren">
+						
+						
 						<layout:Grid defaultSpan="XL3 L3 M3 S3">
 							<layout:VerticalLayout width="{i18n>width_layaut}">
 								<Label text="{i18n>numComite}" class="letraBlaca"/>
@@ -72,6 +76,9 @@
 								</Select>
 							</layout:VerticalLayout>
 						</layout:Grid>
+						
+						
+						
 						<!--Fin linea 1-->
 						<!--2º linea-->
 						<layout:Grid defaultSpan="XL3 L3 M3 S3" class="oculto busqueda_avanzada">
@@ -175,7 +182,7 @@
 <!--				</f:content>
 				<f:content>-->
 				</layout:VerticalLayout>
-				<layout:VerticalLayout>
+<!--				<layout:VerticalLayout>
 					<form:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ResponsiveGridLayout" editable="true" labelSpanL="3" labelSpanM="3"
 						emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" title="Number Input">
 						<form:content>
@@ -193,14 +200,14 @@
 						
 					</form:SimpleForm>
 					<Button type="Default" icon="sap-icon://save" press="guardar" width="10%"></Button>
-					</layout:VerticalLayout>
+					</layout:VerticalLayout>-->
 <!--				</f:content>
 			</f:DynamicPageHeader>-->
 		</layout:VerticalLayout>
 		<!-- DynamicPage Content -->
 	<!--	<f:content>-->
 			<t:Table rows="{path:'vuelos>/FLIGHTSet' , filters: { path: 'Carrid', operator: 'EQ', value1: 'AA' } }" id="Vuelos" selectionMode="None"
-				visibleRowCount="10" firstVisibleRow="3">
+				visibleRowCount="10" firstVisibleRow="3" class="tabla">
 				<t:columns>
 					<t:Column demandPopin="false" sortProperty="vuelos>Carrid">
 						<Label text="{i18n>EMPRESA}"/>

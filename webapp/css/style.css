@@ -34,6 +34,24 @@ centrar{
 	float:right;
 }
 
+.label_crear{
+  width: 25%;
+  float: left;
+}
+
+.principal{
+  margin-top:1%;
+	
+}
+.tabla{
+    margin-bottom:10%;	
+	margin-left:2%;
+	margin-right:2%;
+}
+.upload{
+	width: 50%;
+	margin-left:24%;
+}
 
 #__text7{
 	visibility: hidden; /*Espacio entre fecha y hora*/
