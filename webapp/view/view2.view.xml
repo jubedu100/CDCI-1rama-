@@ -50,7 +50,7 @@
 				cols="200"
 				height="100px" />-->
 
-<UploadCollection
+<UploadCollection 
 				id="UploadCollection"
 				maximumFilenameLength="55"
 				maximumFileSize="10"
@@ -65,6 +65,7 @@
 				typeMissmatch="onTypeMissmatch"
 				uploadComplete="onUploadComplete"
 				beforeUploadStarts="onBeforeUploadStarts"
+				uploadUrl="/sflight/sap/opu/odata/SAP/Z001_VUELOS_PRUEBA_SRV/FileSet"
 				>
 			</UploadCollection>
 			<Button

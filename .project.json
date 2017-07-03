@@ -7,7 +7,7 @@
     "targetFolder": "dist",
     "sourceFolder": "webapp",
     "buildRequired": true,
-    "lastBuildDateTime": "Thu, 29 Jun 2017 09:27:50 GMT"
+    "lastBuildDateTime": "Wed, 14 Jun 2017 10:46:07 GMT"
   },
   "generation": [
     {
@@ -60,10 +60,10 @@
   "hcpdeploy": {
     "account": "p1942403512trial",
     "name": "cdci2",
-    "lastVersionWeTriedToDeploy": "1.0.29"
+    "lastVersionWeTriedToDeploy": "1.0.10"
   },
   "deploy": {
     "destination": "sflight",
-    "name": "z_prueba_docx"
+    "name": "Z_PRUEBA_RENFE"
   }
 }
