@@ -9,22 +9,28 @@ sap.ui.define([
 	'sap/ui/model/Sorter',
 	'sap/ui/table/SortOrder',
 	'sap/ui/unified/FileUploaderParameter'
-
 	
 
-], function(jQuery, MessageToast, UploadCollectionParameter, Controller, Filter, FilterOperator, DateFormat, Sorter, SortOrder) {
+], function(jQuery, MessageToast, UploadCollectionParameter, Controller, Filter, FilterOperator, DateFormat, Sorter, SortOrder, UIComponent, Device, models) {
 	"use strict";
 
 	return Controller.extend("CDCI1.controller.view2", {
 
 		guardar: function() {
-			var oTable = this.getView().byId("Vuelos");
+			
+
+
+			 
+			var oTable   = sap.ui.getCore().byId("__xmlview1--Vuelos");
+			/*var oTable   = this.getView().byId();*/
 			var oBinding = oTable.getBinding("rows");
 			var oModel = oBinding.getModel();
+			
+			
 			var mNewEntry = {};
 
-			mNewEntry.Carrid = $("#__xmlview0--Carrid-inner").val();
-			mNewEntry.Connid = $("#__xmlview0--Connid-inner").val();
+			mNewEntry.Carrid = $("#__xmlview2--Carrid-inner").val();
+			mNewEntry.Connid = $("#__xmlview2--Connid-inner").val();
 			var oParameters = {
 				"Carrid": mNewEntry.Carrid,
 				"Connid": mNewEntry.Connid
@@ -33,7 +39,7 @@ sap.ui.define([
 			};
 			/*mNewEntry.Carrid = sap.ui.getCore().byId("#__xmlview0--Carrid").getValue();*/
 
-			oModel.create("/FLIGHTSet", oParameters);
+		oModel.create("/FLIGHTSet", oParameters);
 
 		},
 		/**
@@ -75,16 +81,19 @@ sap.ui.define([
 
 		onChange : function(oEvent) {
 
+
+
 			var oUploadCollection = oEvent.getSource();
-			
+
 			var oCustomerHeaderToken = new UploadCollectionParameter({
 				name : "x-csrf-token",
-				value : "securityTokenFromModel"
+				value : "daP88CVZSOH1gvVaPlr3dg=="
 				
 			});
+			
 			oUploadCollection.addHeaderParameter(oCustomerHeaderToken);
 			MessageToast.show("Event change triggered");
-			
+
 		},
  
 		onFileDeleted : function(oEvent) {
@@ -138,6 +147,22 @@ sap.ui.define([
 			});
 			oEvent.getParameters().addHeaderParameter(oCustomerHeaderSlug1);
 			
+			var oCustomerHeaderSlug2 = new sap.m.UploadCollectionParameter({
+				name : "Authorization",
+				value : "UNISYS01:UNISYS01"
+
+			});
+			oEvent.getParameters().addHeaderParameter(oCustomerHeaderSlug2);
+
+			var oCustomerHeaderSlug3 = new sap.m.UploadCollectionParameter({
+				name : "Content-Type",
+				value : "application/json"
+			});
+			oEvent.getParameters().addHeaderParameter(oCustomerHeaderSlug3);
+
+
+
+
 			
 			setTimeout(function() {
 				MessageToast.show("Event beforeUploadStarts triggered");
@@ -160,6 +185,7 @@ sap.ui.define([
 				MessageToast.show("Event uploadComplete triggered");
 			}.bind(this), 8000);
 		},
+ 
  
 		onSelectChange : function(oEvent) {
 			var oUploadCollection = this.getView().byId("UploadCollection");

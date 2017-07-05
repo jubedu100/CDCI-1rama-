@@ -6,7 +6,7 @@
 				<content>
 					<layout:VerticalLayout width="100%">
 						<form:SimpleForm width="auto" class="sapUiResponsiveMargin" layout="ResponsiveGridLayout" editable="true" labelSpanL="3" labelSpanM="3"
-							emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+							emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" id="table">
 							<form:content>
 								<Label text="Carrid" class="label_crear"/>
 								<Input value="AA" id="Carrid"/>
@@ -19,7 +19,7 @@
 								<Label text="Fldate" class="label_crear"/>
 								<Input/>
 							</form:content>
-							<html:center><Button type="Default" icon="sap-icon://save" press="guardar" width="10%" ></Button></html:center>
+						
 						</form:SimpleForm>
 				
 					</layout:VerticalLayout>
@@ -76,8 +76,11 @@
 			</Button>
 				<Label />
 				<html:center><Button type="Default" icon="sap-icon://save" press="guardar" width="10%" ></Button></html:center>
+
+			
 				</content>
 			</Page>
 		</pages>
 	</App>
+
 </mvc:View>
