@@ -13,31 +13,28 @@ sap.ui.define([
 
 ], function(jQuery, MessageToast, UploadCollectionParameter, Controller, Filter, FilterOperator, DateFormat, Sorter, SortOrder, UIComponent, Device, models) {
 	"use strict";
+	
+var header_xcsrf_token;
 
 	return Controller.extend("CDCI1.controller.view2", {
 
 		guardar: function() {
 			
-
-
 			 
 			var oTable   = sap.ui.getCore().byId("__xmlview1--Vuelos");
-			/*var oTable   = this.getView().byId();*/
 			var oBinding = oTable.getBinding("rows");
-			var oModel = oBinding.getModel();
+			var oModel   = oBinding.getModel();
 			
 			
 			var mNewEntry = {};
 
 			mNewEntry.Carrid = $("#__xmlview2--Carrid-inner").val();
 			mNewEntry.Connid = $("#__xmlview2--Connid-inner").val();
-			var oParameters = {
+			var oParameters  = {
 				"Carrid": mNewEntry.Carrid,
 				"Connid": mNewEntry.Connid
-					/*                        "lastname" : "b",
-					                        "firstname" : "c",*/
 			};
-			/*mNewEntry.Carrid = sap.ui.getCore().byId("#__xmlview0--Carrid").getValue();*/
+		
 
 		oModel.create("/FLIGHTSet", oParameters);
 
@@ -80,19 +77,56 @@ sap.ui.define([
 		/*	var PageController = Controller.extend("sap.m.sample.UploadCollectionForPendingUpload.Page", {*/
 
 		onChange : function(oEvent) {
+			
+			OData.request
+        ({
+             requestUri: "/sflight/sap/opu/odata/SAP/Z001_VUELOS_PRUEBA_SRV/FileSet",
+                   method: "GET",
+                   headers:
+                       {     
+                                      "X-Requested-With": "XMLHttpRequest",
+                                      "Content-Type": "application/atom+xml",
+                                      "DataServiceVersion": "2.0",       
+                                      "X-CSRF-Token":"Fetch"   
+                       }           
+                },
 
+                 function (data, response)
+                 {
+                     header_xcsrf_token = response.headers['x-csrf-token'];
 
+                 }
+          );
+/*		var header_xcsrf_token = "";
+		 OData.request
+        ({
+             requestUri: "/sflight/sap/opu/odata/SAP/Z001_VUELOS_PRUEBA_SRV/FileSet",
+                   method: "GET",
+                   headers:
+                       {     
+                                      "X-Requested-With": "XMLHttpRequest",
+                                      "Content-Type": "application/atom+xml",
+                                      "DataServiceVersion": "2.0",       
+                                      "X-CSRF-Token":"Fetch"   
+                       }           
+                },
+
+                 function (data, response)
+                 {
+                       header_xcsrf_token = response.headers['x-csrf-token'];
+                 }
+          );
 
 			var oUploadCollection = oEvent.getSource();
 
 			var oCustomerHeaderToken = new UploadCollectionParameter({
 				name : "x-csrf-token",
-				value : "daP88CVZSOH1gvVaPlr3dg=="
+				value : header_xcsrf_token
 				
 			});
 			
 			oUploadCollection.addHeaderParameter(oCustomerHeaderToken);
-			MessageToast.show("Event change triggered");
+			MessageToast.show("Event change triggered");*/
 
 		},
  
@@ -135,6 +169,7 @@ sap.ui.define([
  
 		onBeforeUploadStarts : function(oEvent) {
 			// Header Slug
+			
 			var oCustomerHeaderSlug = new sap.m.UploadCollectionParameter({
 				name : "slug",
 				value : oEvent.getParameter("fileName")
@@ -150,7 +185,6 @@ sap.ui.define([
 			var oCustomerHeaderSlug2 = new sap.m.UploadCollectionParameter({
 				name : "Authorization",
 				value : "UNISYS01:UNISYS01"
-
 			});
 			oEvent.getParameters().addHeaderParameter(oCustomerHeaderSlug2);
 
@@ -160,10 +194,12 @@ sap.ui.define([
 			});
 			oEvent.getParameters().addHeaderParameter(oCustomerHeaderSlug3);
 
+			var oCustomerHeaderSlug4 = new sap.m.UploadCollectionParameter({
+				name : "x-csrf-token",
+				value : header_xcsrf_token
+			});
+			oEvent.getParameters().addHeaderParameter(oCustomerHeaderSlug4);
 
-
-
-			
 			setTimeout(function() {
 				MessageToast.show("Event beforeUploadStarts triggered");
 			}, 4000);
